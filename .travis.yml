@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "6"
+after_success:
+  - ./node_modules/bithound/bin/bithound check git@github.com:Automotivated/vroom.git
+before_deploy:
+  - npm run build
+  - cp ./index.html ./dist/index.html
+deploy:
+  provider: surge
+  project: ./dist/
+  domain: vroom.automotivated.nl
+  skip_cleanup: true

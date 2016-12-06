@@ -1,0 +1,31 @@
+---
+engines:
+	duplication:
+		enabled: true
+		config:
+			languages:
+				- javascript
+	eslint:
+		enabled: true
+		channel: "eslint-2"
+		config:
+			config: .codeclimate.eslintrc
+			extensions:
+				- .js
+	fixme:
+		enabled: true
+ratings:
+	paths:
+		- "**.inc"
+		- "**.js"
+		- "**.vue"
+		- "**.scss"
+		- "**.tpl"
+		- "**.md"
+		- "**.json"
+		- "**.html"
+		- "**.php"
+exclude_paths:
+	- dist/
+	- test/
+	- build/
