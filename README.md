@@ -10,10 +10,10 @@
 Automotivated.vroom( ) is an innovative application to show inventory based on search queries of the visitor. It's build on top of [Vue](http://vuejs.org/) and [Vuex](http://vuex.vuejs.org/en/index.html)
 
 ## v0.0.1 EOL
-Because of several reasons, the development of vroom v0.0 has been discontinued. The previous development repository has been deleted and the project has gain a complete reboot.
+Because of several reasons, the development of vroom v0.0.1 has been discontinued. The previous development repository has been deleted and the project has gain a complete reboot.
 
 ## v1.0.0
-Starting fresh, starting something awesome! Project started this time with [vue-cli](https://github.com/vuejs/vue-cli)
+Starting fresh, starting something awesome! We're expecting the same output, so don't worry! The project is started this time with [vue-cli](https://github.com/vuejs/vue-cli)
 > Thanks to [Dezzign](http://www.dezzign.nl/) we won't rely anymore on a default design (materialize) but are getting our own brandnew look and feel. Customizable to your own needs!
 
 
@@ -103,7 +103,8 @@ Before we can show some data, we need to establish a connection to the api serve
 <script>
 	Automotivated.vroom('#vroom', {
 		api: {
-			endpoint: 'http://engine.automotivated.nl/api/v1',
+			endpoint: 'http://engine.automotivated.nl/api',
+			version: 'v1',
 			key: 'YOUR_UNIQUE_KEY'
 		}
 	});
@@ -125,8 +126,11 @@ A typical integration will look something like this
 	document.addEventListener('DOMContentLoaded', function () {
 		if (typeof window.Automotivated.vroom == 'function') {
 			Automotivated.vroom('#vroom', {
-				api: 'automotivated',
-				key: 'YOUR_UNIQUE_KEY',
+				api: {
+					endpoint: 'automotivated',
+					version: 'v1',
+					key: 'YOUR_UNIQUE_KEY'
+				},
 				overview_count: 24,
 				overview_rendering: 'grid',
 				debounce: 400,
@@ -141,9 +145,9 @@ A typical integration will look something like this
 Because we rebooted the project, this list will grow and grow before release. Then we will add a feature list for upcoming releases.
 ##### v1.0.0
 - [x] Setting up the 1.0.0 environment
-- [ ] Setup CI (travis)
-- [ ] Setup CD ()
-- [ ]
+- [x] Setup CI (travis)
+- [x] Setup CD (surge)
+- [x] Setup Coverage/Coveralls
 - [ ]
 - [ ] Start making it work!
 
