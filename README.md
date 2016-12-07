@@ -127,7 +127,7 @@ A typical integration will look something like this
 		if (typeof window.Automotivated.vroom == 'function') {
 			Automotivated.vroom('#vroom', {
 				api: {
-					endpoint: 'automotivated',
+					endpoint: 'http://engine.automotivated.nl/api',
 					version: 'v1',
 					key: 'YOUR_UNIQUE_KEY'
 				},
@@ -147,22 +147,16 @@ Because we rebooted the project, this list will grow and grow before release. Th
 - [x] Setting up the 1.0.0 environment
 - [x] Setup CI (travis)
 - [x] Setup CD (surge)
-- [x] Setup Coverage/Coveralls
-- [ ]
-- [ ] Start making it work!
+- [x] Setup Coveralls
+- [ ] Setup Code Coverage
+- [ ] Start making vroom
+- [ ] Add an API
+- [ ] Create a store
+- [ ] Get a design from Dezzign
 
 ## Resources
-- https://www.syncano.io/blog/testing-syncano/
-- https://jsbin.com/zefawu/5/edit?html,output
-- http://rc.vuejs.org/
+- http://vuejs.org/
 - http://vuex.vuejs.org/en/intro.html
-- http://vue-loader.vuejs.org/en/workflow/testing.html
-- https://icomoon.io/app/#/select
 
 ### For later readings
 - http://baymard.com/blog/how-to-design-applied-filters
-
-### Designs
-- http://demo.themesuite.com/automotive-wp/boxed-sidebar-left/?order=year|ASC
-- http://theme.webtemplatemasters.com/index.php#theme=cardealer
-- https://themeforest.net/item/carat-responsive-automotive-html-template/6552382?s_rank=5
