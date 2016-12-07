@@ -3,7 +3,7 @@ node_js:
   - "6"
 after_success:
   - ./node_modules/bithound/bin/bithound check git@github.com:Automotivated/vroom.git
-  - coveralls
+  - cat ./test/unit/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 before_deploy:
   - npm run build
   - cp ./index.html ./dist/index.html
