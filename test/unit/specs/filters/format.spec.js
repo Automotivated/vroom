@@ -18,6 +18,9 @@ describe('format', () => {
 		}, '% bijtelling')).to.equal('20 % bijtelling (14)')
 		expect(formatFilter.fancyfy('test')).to.equal('Test (0)')
 		expect(formatFilter.fancyfy('test', 'test')).to.equal('Test test (0)')
+		expect(formatFilter.fancyfy({
+			name: 'renault'
+		})).to.equal('No-label')
 	})
 	it('should return a nice formatted number', () => {
 		expect(formatFilter.normalizeNumber(10000)).to.equal('10.000')
