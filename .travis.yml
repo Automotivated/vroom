@@ -2,8 +2,9 @@ language: node_js
 node_js:
   - "6"
 after_success:
-  - ./node_modules/bithound/bin/bithound check git@github.com:Automotivated/vroom.git
   - cat ./test/unit/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./test/unit/coverage/lcov.info
+  - ./node_modules/bithound/bin/bithound check git@github.com:Automotivated/vroom.git
 before_deploy:
   - npm run build
 deploy:
