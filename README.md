@@ -3,7 +3,7 @@
 	<a href="https://travis-ci.org/Automotivated/vroom"><img src="https://travis-ci.org/Automotivated/vroom.svg?branch=master" alt="Build Status" /></a>
 	<a href="https://www.bithound.io/github/Automotivated/vroom"><img src="https://www.bithound.io/github/Automotivated/vroom/badges/score.svg" alt="bitHound Overall Score"></a>
 	<a href="https://codeclimate.com/github/Automotivated/vroom"><img src="https://codeclimate.com/github/Automotivated/vroom/badges/gpa.svg" /></a>
-	<a href='https://coveralls.io/github/Automotivated/vroom'><img src='https://coveralls.io/repos/github/Automotivated/vroom/badge.svg' alt='Coverage Status' /></a>
+	<a href='https://coveralls.io/github/Automotivated/vroom?branch=master'><img src='https://coveralls.io/repos/github/Automotivated/vroom/badge.svg?branch=master' alt='Coverage Status' /></a>
 </p>
 
 # Automotivated.vroom()
