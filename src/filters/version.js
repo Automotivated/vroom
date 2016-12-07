@@ -10,7 +10,7 @@ import info from '../../package.json'
  * Returns a formatted (c) witht the current date
  */
 function getCopy () {
-	var date = new Date()
+	const date = new Date()
 	return '&copy;&nbsp;' + date.getFullYear()
 }
 
@@ -19,10 +19,12 @@ function getCopy () {
  * returns the binary version of x.x.x
  */
 function getBinaryVersion (version) {
-	var padding = '00000000'
-	version = version || info.version
+	const padding = '00000000'
+	version = (typeof version !== 'undefined')
+		? version
+		: info.version
 	version = version.match(/\d{1,3}\.\d{1,3}\.\d{1,3}/g)[0].replace(/\./g, '')
-	var output = []
+	const output = []
 	for (let i = 0, l = version.length; i < l; i++) {
 		var compact = version[i].charCodeAt(0).toString(2)
 		var padded = padding.substring(0, padding.length - compact.length) + compact

@@ -16,8 +16,8 @@ describe('format', () => {
 			label: '20',
 			total: 14
 		}, '% bijtelling')).to.equal('20 % bijtelling (14)')
-		expect(formatFilter.fancyfy('test')).to.equal('Test (0)')
-		expect(formatFilter.fancyfy('test', 'test')).to.equal('Test test (0)')
+		expect(formatFilter.fancyfy('test')).to.equal('no-label')
+		expect(formatFilter.fancyfy('test', 'test')).to.equal('no-label')
 		expect(formatFilter.fancyfy({
 			name: 'renault'
 		})).to.equal('No-label')

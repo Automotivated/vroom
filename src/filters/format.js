@@ -13,19 +13,16 @@
  * @return string
  */
 function fancyfy (elm, suffix) {
-	let label
-	let total
-	if (typeof elm === 'object') {
-		label = (elm.label)
-			? elm.label.toString()
-			: 'no-label'
-		total = (elm.total && elm.total.toString().match(/^\d+$/))
-			? ' (' + normalizeNumber(elm.total) + ')'
-			: ''
-	} else {
-		label = elm.toString()
-		total = ' (0)'
+	const emptyLabel = 'no-label'
+	if (typeof elm !== 'object') {
+		return emptyLabel
 	}
+	const label = (elm.label)
+		? elm.label.toString()
+		: emptyLabel
+	const total = (elm.total && elm.total.toString().match(/^\d+$/))
+		? ' (' + normalizeNumber(elm.total) + ')'
+		: ''
 	suffix = (suffix)
 		? ' ' + suffix
 		: ''
