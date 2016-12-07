@@ -3,13 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>Automotivated.vroom(), an innovative application for automotive inventory.</title>
-
   <meta name="description" content="Automotivated.vroom, demo page">
   <meta name="author" content="Ferry Kobus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="dist/css/vroom.min.css?v=0.0.1"> -->
   <style>
     html {
       box-sizing: border-box;
@@ -66,9 +63,7 @@
   </header>
   <div id="vroom"></div>
   <footer><span>&copy; 2016 Automotivated</span><br><small>This is a demo page</small></footer>
-  <script src="dist/js/vroom.min.js"></script>
-
-  <script>
+	<script>
     var config = {
       api: {
         endpoint: 'http://engine.automotivated.nl/api',
@@ -76,26 +71,9 @@
         key: 'MY_SECRET_KEY'
       }
     };
-    var head = document.getElementsByTagName('head')[0];
-
     document.addEventListener('DOMContentLoaded', function () {
       if (typeof window.Automotivated !== 'undefined' && typeof window.Automotivated.vroom === 'function') {
         Automotivated.vroom('#vroom', config);
-      } else {
-        var link = document.createElement('link');
-        link.type = 'text/css';
-        link.rel = 'stylesheet';
-        link.href = url;
-        head.appendChild('//vroom.automotivated.nl/css/vroom.min.css?v=0.0.1');
-        var loaded = function() {
-          Automotivated.vroom('#vroom', config);
-        };
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = url;
-        script.onreadystatechange = loaded;
-        script.onload = loaded;
-        head.appendChild('//vroom.automotivated.nl/js/vroom.min.js');
       }
     });
   </script>
