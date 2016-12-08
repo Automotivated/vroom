@@ -58,9 +58,7 @@ npm install
 ```
 
 ## [Compilation](https://www.youtube.com/watch?v=KWJEM5Vcxmk)
-Because we're using [webpack](https://webpack.github.io/) you need to run the following command during development from the root.
-
-We're using [hot module replacement](https://webpack.github.io/docs/hot-module-replacement.html) for active development, this will start a webserver at [http://localhost:8080/](http://localhost:8080/)
+We're using [webpack](https://webpack.github.io/) with [hot module replacement](https://webpack.github.io/docs/hot-module-replacement.html) for active development. Run the following command in the project root and it will start a webserver at [http://localhost:8080/](http://localhost:8080/).
 ```sh
 npm run dev
 ```
@@ -73,7 +71,7 @@ npm run build
 The whole app is and should be testable via unit test. New added code must be added to a test. Unit tests are run by Karma with Jasmine.<br>
 The following command will run all tests in tests/unit
 ```sh
-npm run unit
+npm run test
 ```
 
 ## Integration
@@ -113,6 +111,7 @@ Before we can show some data, we need to establish a connection to the api serve
 
 #### Options
 `api.endpoint` is the api to talk to<br>
+`api.version` is the version of the api<br>
 `api.key` is the key that's used for authentication<br>
 `overview_count` is the amount of hits per page<br>
 `overview_rendering` is what we default want to start with (`rows` or `grid`)<br>
@@ -148,7 +147,7 @@ Because we rebooted the project, this list will grow and grow before release. Th
 - [x] Setup CI (travis)
 - [x] Setup CD (surge)
 - [x] Setup Coveralls
-- [ ] Setup Code Coverage
+- [x] Setup Code Coverage
 - [ ] Start making vroom
 - [ ] Add an API
 - [ ] Create a store
