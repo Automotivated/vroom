@@ -9,12 +9,12 @@ import * as actions from './actions'
 
 export default {
 	state: {
+		api: {
+			endpoint: 'https://engine.automotivated.nl/',
+			version: 'v1',
+			key: null
+		},
 		options: {
-			api: {
-				endpoint: null,
-				version: 'v1',
-				key: null
-			},
 			overviewCount: 24,
 			overviewRendering: 'grid',
 			debounce: 350,
@@ -41,6 +41,10 @@ export default {
 		[types.UPDATE_OPTIONS] (state, options) {
 			state.options = Object.assign(state.options, options)
 		},
+		// Update the api provided by the client
+		[types.UPDATE_API] (state, api) {
+			state.api = Object.assign(state.api, api)
+		},
 		// Update the options provided by the client
 		[types.UPDATE_OVERVIEW_RENDERING] (state, rendering) {
 			Vue.set(state.options, 'overviewRendering', rendering)
@@ -51,9 +55,9 @@ export default {
 		}
 	},
 	getters: {
-		options (state) {
-			return state.options
-		},
+		loading: state => state.loader.loading,
+		options: state => state.options,
+		api: state => state.api,
 		loadingDuration (state) {
 			const delays = state.loader.delays
 			var sum = delays.reduce(function (a, b) {

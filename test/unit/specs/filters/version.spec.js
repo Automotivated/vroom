@@ -16,6 +16,7 @@ describe('filters', () => {
 	it('should return binary version', () => {
 		expect(versionFilter.getBinaryVersion('0.0.1')).to.equal('v00110000.00110000.00110001')
 		expect(versionFilter.getBinaryVersion('0.1.0-alpha.1')).to.equal('v00110000.00110001.00110000')
+		expect(versionFilter.getBinaryVersion().substring(0, 1)).to.equal('v')
 	})
 
 	it('should return current version', () => {

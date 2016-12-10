@@ -16,11 +16,14 @@ describe('format', () => {
 			label: '20',
 			total: 14
 		}, '% bijtelling')).to.equal('20 % bijtelling (14)')
-		expect(formatFilter.fancyfy('test')).to.equal('no-label')
-		expect(formatFilter.fancyfy('test', 'test')).to.equal('no-label')
+		expect(formatFilter.fancyfy({
+			label: '20'
+		}, '% bijtelling')).to.equal('20 % bijtelling (0)')
+		expect(formatFilter.fancyfy('test')).to.equal('No-label (0)')
+		expect(formatFilter.fancyfy('test', 'test')).to.equal('No-label test (0)')
 		expect(formatFilter.fancyfy({
 			name: 'renault'
-		})).to.equal('No-label')
+		})).to.equal('No-label (0)')
 	})
 	it('should return a nice formatted number', () => {
 		expect(formatFilter.normalizeNumber(10000)).to.equal('10.000')
