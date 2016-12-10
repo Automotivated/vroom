@@ -1,6 +1,6 @@
 {
 	"ignore": [
-		"**/build/**"
+		"**/build/**",
 	  "**/node_modules/**"
 	],
 	"test": [
