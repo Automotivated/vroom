@@ -8,7 +8,7 @@
   ],
 	"critics": {
 	  "wc": {
-	  	"limit": 300
+	  	"limit": 3000
 	  }
 	},
 	"dependencies": {
