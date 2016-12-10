@@ -95,7 +95,7 @@ Automotivated.vroom('#vroom')
 Automotivated.vroom(document.querySelector('#vroom'))
 ```
 
-Before we can show some data, we need to establish a connection to the api server. You can offcourse build you own API. See the engine docs for formatting.
+Before we can show some data, we need to establish a connection to the api server. You can offcourse build you own API. See the [Automotivated.engine( )](https://github.com/Automotivated/engine) docs for formatting.
 ```html
 <div id="vroom"></div>
 <script>
@@ -148,10 +148,36 @@ Because we rebooted the project, this list will grow and grow before release. Th
 - [x] Setup CD (surge)
 - [x] Setup Coveralls
 - [x] Setup Code Coverage
-- [ ] Start making vroom
-- [ ] Add an API
-- [ ] Create a store
 - [ ] Get a design from Dezzign
+- [ ] Keep test coverage at 100%
+- [ ] Add an API [Automotivated.engine( )](https://github.com/Automotivated/engine)
+- [ ] Create a store module for the app
+  - [ ] options
+  - [ ] api
+  - [ ] global app states
+- [ ] Create a store module for the filters
+  - [ ] Sourcelists
+  - [ ] Data
+  - [ ] Parsing
+- [ ] Create a store module for the results
+  - [ ] Dummy content
+  - [ ] Overview rendering
+- [ ] Active filters
+- [ ] Filters
+  - [ ] Search filter
+  - [ ] Multi filter
+  - [ ] Range filter
+- [ ] Loading
+- [ ] Error notifications
+- [ ] Modal
+- [ ] Pagination
+- [ ] Grid results
+- [ ] Row results
+- [ ] Sorting
+- [ ] Switch overview rendering
+- [ ] Switch overview count
+- [ ] Detail page
+
 
 ## Resources
 - http://vuejs.org/
