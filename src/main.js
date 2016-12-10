@@ -6,6 +6,7 @@
 
 import Vue from 'vue'
 import Vroom from './Vroom.vue'
+import store from './store/store'
 
 // Change to the opposite when going for production
 if (process.env.NODE_ENV !== 'production') {
@@ -21,7 +22,11 @@ if (process.env.NODE_ENV !== 'production') {
 		/* eslint-disable no-new */
 		new Vue({
 			el: instance,
-			render: h => h(Vroom)
+			store,
+			render: h => h(Vroom),
+			created () {
+				this.$store.dispatch('updateOptions', options)
+			}
 		})
 	}
 
