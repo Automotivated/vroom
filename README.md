@@ -113,10 +113,10 @@ Before we can show some data, we need to establish a connection to the api serve
 `api.endpoint` is the api to talk to<br>
 `api.version` is the version of the api<br>
 `api.key` is the key that's used for authentication<br>
-`overview_count` is the amount of hits per page<br>
-`overview_rendering` is what we default want to start with (`rows` or `grid`)<br>
+`overviewCount` is the amount of hits per page<br>
+`overviewRendering` is what we default want to start with (`rows` or `grid`)<br>
 `debounce` wait with calling the api when this little timer is finished<br>
-`filter_order` orders and enables filters<br>
+`filterOrder` orders and enables filters<br>
 
 A typical integration will look something like this
 ```html
@@ -130,10 +130,10 @@ A typical integration will look something like this
 					version: 'v1',
 					key: 'YOUR_UNIQUE_KEY'
 				},
-				overview_count: 24,
-				overview_rendering: 'grid',
+				overviewCount: 24,
+				overviewRendering: 'grid',
 				debounce: 400,
-				filter_order: ['search', 'fuel', 'price', 'year', 'body', ...]
+				filterOrder: ['search', 'fuel', 'price', 'year', 'body', ...]
 			});
 		}
 	});

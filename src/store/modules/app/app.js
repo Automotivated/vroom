@@ -15,8 +15,6 @@ export default {
 			key: null
 		},
 		options: {
-			overviewCount: 24,
-			overviewRendering: 'grid',
 			debounce: 350,
 			availableFilters: ['keyword', 'make', 'model', 'fuel', 'price', 'year', 'mileage', 'body', 'transmission', 'vehicle-type', 'type', 'color', 'doors', 'engine-capacity', 'power', 'additional-tax', 'energylabel', 'options']
 		},
@@ -44,14 +42,6 @@ export default {
 		// Update the api provided by the client
 		[types.UPDATE_API] (state, api) {
 			state.api = Object.assign(state.api, api)
-		},
-		// Update the options provided by the client
-		[types.UPDATE_OVERVIEW_RENDERING] (state, rendering) {
-			Vue.set(state.options, 'overviewRendering', rendering)
-		},
-		// Update the options provided by the client
-		[types.UPDATE_OVERVIEW_COUNT] (state, count) {
-			Vue.set(state.options, 'overviewCount', count)
 		}
 	},
 	getters: {

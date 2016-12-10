@@ -1,6 +1,5 @@
 /**
  * actions that influence the app state
- *
  */
 
 import * as types from '../../types'
@@ -15,7 +14,15 @@ export const updateOptions = ({ commit, state }, options) => {
 		commit(types.UPDATE_API, options.api)
 		delete options.api
 	}
-	commit(types.UPDATE_OPTIONS, options)
+	if (typeof options.overviewRendering !== 'undefined') {
+		commit(types.UPDATE_DISPLAY, options.overviewRendering)
+	}
+	if (typeof options.overviewCount !== 'undefined') {
+		commit(types.UPDATE_SIZE, options.overviewCount)
+	}
+	if (Object.keys(options).length > 0) {
+		commit(types.UPDATE_OPTIONS, options)
+	}
 }
 /**
  * addDelay
@@ -28,16 +35,4 @@ export const addDelay = ({ commit, state }, delay) => {
  */
 export const setLoading = ({ commit, state }, loading) => {
 	commit(types.LOADING, loading)
-}
-/**
- * setOverviewRendering
- */
-export const setOverviewRendering = ({ commit, state }, rendering) => {
-	commit(types.UPDATE_OVERVIEW_RENDERING, rendering)
-}
-/**
- * setOverviewCount
- */
-export const setOverviewCount = ({ commit, state }, count) => {
-	commit(types.UPDATE_OVERVIEW_COUNT, count)
 }

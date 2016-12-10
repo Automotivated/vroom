@@ -2,6 +2,7 @@ import 'babel-polyfill'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import app from 'src/store/modules/app/app'
+import * as types from 'src/store/types'
 
 Vue.use(Vuex)
 
@@ -13,7 +14,17 @@ describe('App store', () => {
 		vm = new Vue({
 			store: new Vuex.Store({
 				modules: {
-					app
+					app,
+					mock: {
+						mutations: {
+							[types.UPDATE_DISPLAY] (state, display) {
+								return display
+							},
+							[types.UPDATE_SIZE] (state, size) {
+								return size
+							}
+						}
+					}
 				}
 			})
 		})
@@ -44,7 +55,6 @@ describe('App store', () => {
 		it('should return default options', () => {
 			const options = vm.$store.getters.options
 			expect(options).to.be.an('object')
-			expect(options.overviewCount).to.be.an('number')
 			expect(options.debounce).to.be.an('number')
 			expect(options.availableFilters).to.be.an('array')
 		})
@@ -52,9 +62,19 @@ describe('App store', () => {
 		it('should overwrite the default options', () => {
 			const options = vm.$store.getters.options
 			vm.$store.dispatch('updateOptions', {
-				overviewCount: 12
+				debounce: 2000
 			})
-			expect(options.overviewCount).to.equal(12)
+			expect(options.debounce).to.equal(2000)
+		})
+
+		it('should still update default options', () => {
+			const options = vm.$store.getters.options
+			vm.$store.dispatch('updateOptions', {
+				debounce: 2000,
+				overviewCount: 24,
+				overviewRendering: 'grid'
+			})
+			expect(options.debounce).to.equal(2000)
 		})
 	})
 
@@ -77,20 +97,6 @@ describe('App store', () => {
 			expect(vm.$store.getters.loading).to.equal(false)
 			vm.$store.dispatch('setLoading', true)
 			expect(vm.$store.getters.loading).to.equal(true)
-		})
-
-		it('should update overview rendering', () => {
-			const options = vm.$store.getters.options
-			expect(options.overviewRendering).to.equal('grid')
-			vm.$store.dispatch('setOverviewRendering', 'rows')
-			expect(options.overviewRendering).to.equal('rows')
-		})
-
-		it('should update the overview count', () => {
-			const options = vm.$store.getters.options
-			expect(options.overviewCount).to.equal(12)
-			vm.$store.dispatch('setOverviewCount', 50)
-			expect(options.overviewCount).to.equal(50)
 		})
 	})
 })
