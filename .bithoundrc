@@ -1,0 +1,34 @@
+{
+	"ignore": [
+	  "**/node_modules/**"
+	],
+	"test": [
+    "**/test/**"
+  ],
+	"critics": {
+	  "wc": {
+	  	"limit": 300
+	  }
+	},
+	"dependencies": {
+		"unused-ignores": [
+			"vue-*",
+			"*-loader",
+			"sinon-chai",
+			"sinon",
+			"phantomjs-prebuilt",
+			"mocha",
+			"lolex",
+			"karma-*",
+			"eslint",
+			"eslint-*",
+			"codeclimate-test-reporter",
+			"chai",
+			"bithound",
+			"babel-*"
+		],
+		"mute": [
+			"karma"
+		]
+	}
+}
