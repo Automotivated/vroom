@@ -93,6 +93,16 @@ describe('App store', () => {
 	})
 
 	describe('default app state should change', () => {
+		// THIS SHOULD WORK....
+		// it('should update loading', done => {
+		// 	var loading = vm.$store.getters.loading
+		// 	expect(loading).to.equal(false)
+		// 	vm.$store.dispatch('setLoading', true)
+		// 	Vue.nextTick(() => {
+		// 		expect(loading).to.equal(true)
+		// 		done()
+		// 	})
+		// })
 		it('should update loading', () => {
 			expect(vm.$store.getters.loading).to.equal(false)
 			vm.$store.dispatch('setLoading', true)

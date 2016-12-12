@@ -1,6 +1,6 @@
 /**
- * app module
- * Keeps track of global vuex states
+ * stats module
+ * Keeps track of stats states
  */
 
 import Vue from 'vue'

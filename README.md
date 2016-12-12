@@ -117,6 +117,7 @@ Before we can show some data, we need to establish a connection to the api serve
 `overviewRendering` is what we default want to start with (`rows` or `grid`)<br>
 `debounce` wait with calling the api when this little timer is finished<br>
 `filterOrder` orders and enables filters<br>
+`language` set the language of the application<br>
 
 A typical integration will look something like this
 ```html
@@ -133,7 +134,8 @@ A typical integration will look something like this
 				overviewCount: 24,
 				overviewRendering: 'grid',
 				debounce: 400,
-				filterOrder: ['search', 'fuel', 'price', 'year', 'body', ...]
+				filterOrder: ['search', 'fuel', 'price', 'year', 'body', ...],
+				language: 'nl'
 			});
 		}
 	});
@@ -150,6 +152,7 @@ Because we rebooted the project, this list will grow and grow before release. Th
 - [x] Setup Code Coverage
 - [ ] Get a design from Dezzign
 - [ ] Keep test coverage at 100%
+- [ ] Internationalization
 - [ ] Add an API [Automotivated.engine( )](https://github.com/Automotivated/engine)
 - [ ] Create a store module for the app
   - [ ] options

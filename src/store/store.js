@@ -4,6 +4,7 @@
 
 import Vue from 'vue'
 import Vuex from 'vuex'
+import vuexI18n from 'vuex-i18n'
 
 import app from './modules/app/app'
 import filters from './modules/filters/filters'
@@ -13,11 +14,16 @@ import stats from './modules/stats/stats'
 // Tell Vue to use Vuex
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
 	modules: {
 		app,
 		filters,
 		results,
-		stats
+		stats,
+		i18n: vuexI18n.store
 	}
 })
+
+Vue.use(vuexI18n.plugin, store)
+
+export default store

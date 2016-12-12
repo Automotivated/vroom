@@ -4,7 +4,7 @@ import * as types from 'src/store/types'
 /* global chai */
 chai.use(require('chai-things'))
 
-describe('story types', () => {
+describe('Store types', () => {
 	it('should return an array of strings', () => {
 		expect(types).to.be.an('object')
 		expect(types[Object.keys(types)[0]]).to.be.an('string')
