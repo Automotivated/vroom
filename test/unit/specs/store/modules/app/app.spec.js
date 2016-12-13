@@ -81,14 +81,14 @@ describe('App store', () => {
 	describe('options should be valid', () => {
 		it('should update the default options', () => {
 			const api = vm.$store.getters.api
-			expect(api.endpoint).to.equal('https://engine.automotivated.nl/')
+			expect(api.endpoint).to.equal('https://engine.automotivated.nl/api')
 			vm.$store.dispatch('updateOptions', {
 				api: {
 					key: 'MySecretKey'
 				}
 			})
 			expect(api.key).to.equal('MySecretKey')
-			expect(api.endpoint).to.equal('https://engine.automotivated.nl/')
+			expect(api.endpoint).to.equal('https://engine.automotivated.nl/api')
 		})
 	})
 

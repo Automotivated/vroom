@@ -10,7 +10,7 @@ import * as actions from './actions'
 export default {
 	state: {
 		api: {
-			endpoint: 'https://engine.automotivated.nl/',
+			endpoint: 'https://engine.automotivated.nl/api',
 			version: 'v1',
 			key: null
 		},

@@ -22,13 +22,10 @@ if (process.env.NODE_ENV !== 'production') {
 		// We're building the app!
 		let lang = options.language || 'nl'
 		lang = lang.toLowerCase()
-		console.log(translations)
 		if (typeof translations[lang] !== 'undefined') {
 			Vue.i18n.add(lang, translations[lang])
+			Vue.i18n.set(lang)
 		}
-		// set the start locale to use
-		Vue.i18n.set(lang)
-
 		/* eslint-disable no-new */
 		new Vue({
 			el: instance,
