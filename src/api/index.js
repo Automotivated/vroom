@@ -19,32 +19,17 @@ function getData (state, callback) {
 	http.post(api.endpoint + api.path, requestData, {
 		before (request) {
 			// abort previous request, if exists
-			if (http.previousRequest) {
+			try {
 				http.previousRequest.abort()
+			} catch (e) {
+				// do nothing
 			}
 			// set previous request on Vue instance
 			http.previousRequest = request
 		}
 	// parse response
 	}).then((response) => {
-		let responseData = {}
-		if (typeof response.data !== 'object') {
-			try {
-				responseData = JSON.parse(response.data)
-			} catch (e) {
-				callback({
-					errors: [{
-						code: 500,
-						title: 'No JSON response',
-						detail: 'Invalid response from the API'
-					}]
-				})
-			}
-		} else {
-			responseData = response.data
-		}
-		// send it back!
-		callback(responseData)
+		parseResponseData(response, callback)
 	// handle error
 	}, (response) => {
 		callback({
@@ -55,6 +40,27 @@ function getData (state, callback) {
 			}]
 		})
 	})
+}
+
+function parseResponseData (response, callback) {
+	let responseData
+	if (typeof response.data !== 'object') {
+		try {
+			responseData = JSON.parse(response.data)
+		} catch (e) {
+			callback({
+				errors: [{
+					code: 500,
+					title: 'No JSON response',
+					detail: 'Invalid response from the API'
+				}]
+			})
+		}
+	} else {
+		responseData = response.data
+	}
+	// send it back!
+	callback(responseData)
 }
 
 function parseRequestData (state) {
