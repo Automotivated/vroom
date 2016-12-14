@@ -1,0 +1,15 @@
+{
+	"gitbook": ">3.0.0",
+	"title": "Automotivated.vroom() documentation",
+	"pluginsConfig": {
+    "github": {
+      "url": "https://github.com/Automotivated/vroom"
+    }
+  },
+  "links": {
+    "sharing": {
+      "facebook": false,
+      "twitter": false
+    }
+  }
+}

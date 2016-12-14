@@ -150,6 +150,9 @@ Because we rebooted the project, this list will grow and grow before release. Th
 - [x] Setup CD (surge)
 - [x] Setup Coveralls
 - [x] Setup Code Coverage
+- [ ] Setup gitbook
+- [ ] Start working on documentation
+- [ ] Autodeploy gitbook to surge?
 - [ ] Get a design from Dezzign
 - [ ] Keep test coverage at 100%
 - [ ] Internationalization
