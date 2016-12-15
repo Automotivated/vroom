@@ -5,6 +5,7 @@ export const color = {
 	type: 'multi',
 	label: 'filters.masterdata.color.label',
 	key: 'color',
+	active: [],
 	options: [{
 		label: 'filters.masterdata.color.options.grey',
 		value: 'grey',

@@ -5,6 +5,7 @@ export const make = {
 	type: 'multi',
 	label: 'filters.masterdata.make.label',
 	key: 'make',
+	active: [],
 	options: [{
 		label: 'Abarth',
 		value: 'abarth',

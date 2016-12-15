@@ -5,6 +5,7 @@ export const doors = {
 	type: 'multi',
 	label: 'filters.masterdata.doors.label',
 	key: 'doors',
+	active: [],
 	options: [{
 		label: '2',
 		value: 2,

@@ -5,6 +5,7 @@ export const body = {
 	type: 'multi',
 	label: 'filters.masterdata.body.label',
 	key: 'body',
+	active: [],
 	options: [{
 		label: 'filters.masterdata.body.options.hatchback',
 		value: 'hatchback',

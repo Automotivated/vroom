@@ -5,6 +5,7 @@ export const options = {
 	type: 'multi',
 	label: 'filters.masterdata.options.label',
 	key: 'options',
+	active: [],
 	options: [{
 		label: 'filters.masterdata.options.options.abs',
 		value: 'abs',

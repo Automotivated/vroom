@@ -5,6 +5,7 @@ export const transmission = {
 	type: 'multi',
 	label: 'filters.masterdata.transmission.label',
 	key: 'transmission',
+	active: [],
 	options: [{
 		label: 'filters.masterdata.transmission.options.manual',
 		value: 'manual',

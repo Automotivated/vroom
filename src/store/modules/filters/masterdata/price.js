@@ -6,10 +6,12 @@ export const price = {
 	label: 'filters.masterdata.price.label',
 	key: 'price',
 	from: {
-		label: 'filters.masterdata.price.from.label'
+		label: 'filters.masterdata.price.from.label',
+		active: []
 	},
 	to: {
-		label: 'filters.masterdata.price.to.label'
+		label: 'filters.masterdata.price.to.label',
+		active: []
 	},
 	options: [
 		250,

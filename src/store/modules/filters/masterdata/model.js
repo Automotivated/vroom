@@ -5,6 +5,7 @@ export const model = {
 	type: 'multi-search',
 	label: 'filters.masterdata.model.label',
 	key: 'model',
+	active: [],
 	options: {
 		// abarth
 		'abarth': [{

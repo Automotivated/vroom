@@ -5,6 +5,7 @@ export const fuel = {
 	type: 'multi',
 	label: 'filters.masterdata.fuel.label',
 	key: 'fuel',
+	active: [],
 	options: [{
 		label: 'filters.masterdata.fuel.options.petrol',
 		value: 'petrol',

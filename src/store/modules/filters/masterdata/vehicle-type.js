@@ -5,6 +5,7 @@ export const vehicleType = {
 	type: 'multi',
 	label: 'filters.masterdata.vehicle_type.label',
 	key: 'vehicle-type',
+	active: [],
 	options: [{
 		label: 'filters.masterdata.vehicle_type.options.car',
 		value: 'car',

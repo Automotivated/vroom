@@ -5,6 +5,7 @@ export const power = {
 	type: 'range',
 	label: 'filters.masterdata.power.label',
 	key: 'power',
+	active: [],
 	from: {
 		label: 'filters.masterdata.power.from.label'
 	},

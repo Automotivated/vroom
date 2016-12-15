@@ -6,10 +6,12 @@ export const year = {
 	label: 'filters.masterdata.year.label',
 	key: 'year',
 	from: {
-		label: 'filters.masterdata.year.from.label'
+		label: 'filters.masterdata.year.from.label',
+		active: []
 	},
 	to: {
-		label: 'filters.masterdata.year.to.label'
+		label: 'filters.masterdata.year.to.label',
+		active: []
 	},
 	options: [
 		2016,

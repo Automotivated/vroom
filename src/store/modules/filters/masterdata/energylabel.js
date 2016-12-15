@@ -5,6 +5,7 @@ export const energylabel = {
 	type: 'multi',
 	label: 'filters.masterdata.energylabel.label',
 	key: 'energylabel',
+	active: [],
 	options: [{
 		label: 'A',
 		value: 'a',

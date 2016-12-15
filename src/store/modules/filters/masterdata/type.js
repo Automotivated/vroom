@@ -5,6 +5,7 @@ export const type = {
 	type: 'multi',
 	label: 'filters.masterdata.type.label',
 	key: 'type',
+	active: [],
 	options: [{
 		label: 'filters.masterdata.type.options.used',
 		value: 'used',

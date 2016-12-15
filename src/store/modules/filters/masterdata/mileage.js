@@ -6,10 +6,12 @@ export const mileage = {
 	label: 'filters.masterdata.mileage.label',
 	key: 'mileage',
 	from: {
-		label: 'filters.masterdata.mileage.from.label'
+		label: 'filters.masterdata.mileage.from.label',
+		active: []
 	},
 	to: {
-		label: 'filters.masterdata.mileage.to.label'
+		label: 'filters.masterdata.mileage.to.label',
+		active: []
 	},
 	options: [
 		1,

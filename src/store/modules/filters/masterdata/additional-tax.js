@@ -5,6 +5,7 @@ export const additionalTax = {
 	type: 'multi',
 	label: 'filters.masterdata.additional_tax.label',
 	key: 'additional-tax',
+	active: [],
 	options: [{
 		label: '0%',
 		value: 0,

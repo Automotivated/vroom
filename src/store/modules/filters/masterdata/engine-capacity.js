@@ -6,10 +6,12 @@ export const engineCapacity = {
 	label: 'filters.masterdata.engine_capacity.label',
 	key: 'engine-capacity',
 	from: {
-		label: 'filters.masterdata.engine_capacity.from.label'
+		label: 'filters.masterdata.engine_capacity.from.label',
+		active: []
 	},
 	to: {
-		label: 'filters.masterdata.engine_capacity.to.label'
+		label: 'filters.masterdata.engine_capacity.to.label',
+		active: []
 	},
 	options: [
 		500,
