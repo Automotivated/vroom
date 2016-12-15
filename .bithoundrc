@@ -29,7 +29,8 @@
 			"babel-*"
 		],
 		"mute": [
-			"karma"
+			"karma",
+			"gitbook-cli"
 		]
 	}
 }
