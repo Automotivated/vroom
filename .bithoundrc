@@ -1,37 +1,37 @@
 {
-	"ignore": [
-		"**/build/**",
-		"**/node_modules/**"
-		"**/src/store/modules/filters/masterdata/**"
-	],
-	"test": [
-		"**/test/**"
-	],
-	"critics": {
-		"wc": {
-			"limit": 3000
-		}
-	},
-	"dependencies": {
-		"unused-ignores": [
-			"vue-*",
-			"*-loader",
-			"sinon-chai",
-			"sinon",
-			"phantomjs-prebuilt",
-			"mocha",
-			"lolex",
-			"karma-*",
-			"eslint",
-			"eslint-*",
-			"codeclimate-test-reporter",
-			"chai",
-			"bithound",
-			"babel-*"
-		],
-		"mute": [
-			"karma",
-			"gitbook-cli"
-		]
-	}
+  "ignore": [
+    "**/build/**",
+    "**/node_modules/**"
+    "**/src/store/modules/filters/masterdata/**"
+  ],
+  "test": [
+    "**/test/**"
+  ],
+  "critics": {
+    "wc": {
+      "limit": 3000
+    }
+  },
+  "dependencies": {
+    "unused-ignores": [
+      "vue-*",
+      "*-loader",
+      "sinon-chai",
+      "sinon",
+      "phantomjs-prebuilt",
+      "mocha",
+      "lolex",
+      "karma-*",
+      "eslint",
+      "eslint-*",
+      "codeclimate-test-reporter",
+      "chai",
+      "bithound",
+      "babel-*"
+    ],
+    "mute": [
+      "karma",
+      "gitbook-cli"
+    ]
+  }
 }
