@@ -2,6 +2,7 @@
 	"ignore": [
 		"**/build/**",
 	  "**/node_modules/**"
+	  "src/store/modules/filters/masterdata/**"
 	],
 	"test": [
     "**/test/**"
