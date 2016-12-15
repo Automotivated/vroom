@@ -1,16 +1,16 @@
 {
 	"ignore": [
 		"**/build/**",
-	  "**/node_modules/**"
-	  "src/store/modules/filters/masterdata/**"
+		"**/node_modules/**"
+		"**/src/store/modules/filters/masterdata/**"
 	],
 	"test": [
-    "**/test/**"
-  ],
+		"**/test/**"
+	],
 	"critics": {
-	  "wc": {
-	  	"limit": 3000
-	  }
+		"wc": {
+			"limit": 3000
+		}
 	},
 	"dependencies": {
 		"unused-ignores": [
