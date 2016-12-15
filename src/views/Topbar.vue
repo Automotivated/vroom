@@ -2,7 +2,7 @@
 	<header>
 		<h1 v-text="heading"></h1>
 		<p>
-			{{ $t('i18n.masterdata.body') }}
+			{{ $t('filters.masterdata.body.label') }}
 		</p>
 	</div>
 </template>

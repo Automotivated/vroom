@@ -1,0 +1,67 @@
+/**
+ * Masterdata for year types
+ */
+export const year = {
+	type: 'range',
+	label: 'filters.masterdata.year.label',
+	key: 'year',
+	from: {
+		label: 'filters.masterdata.year.from.label'
+	},
+	to: {
+		label: 'filters.masterdata.year.to.label'
+	},
+	options: [
+		2016,
+		2015,
+		2014,
+		2013,
+		2012,
+		2011,
+		2010,
+		2009,
+		2008,
+		2007,
+		2006,
+		2005,
+		2004,
+		2003,
+		2002,
+		2001,
+		2000,
+		1999,
+		1998,
+		1997,
+		1996,
+		1995,
+		1994,
+		1993,
+		1992,
+		1991,
+		1990,
+		1989,
+		1988,
+		1987,
+		1986,
+		1985,
+		1984,
+		1983,
+		1982,
+		1981,
+		1980,
+		1978,
+		1976,
+		1974,
+		1972,
+		1970,
+		1965,
+		1960,
+		1955,
+		1950,
+		1940,
+		1930,
+		1920,
+		1910,
+		1900
+	]
+}

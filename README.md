@@ -150,40 +150,49 @@ Because we rebooted the project, this list will grow and grow before release. Th
 - [x] Setup CD (surge)
 - [x] Setup Coveralls
 - [x] Setup Code Coverage
-- [ ] Setup gitbook
 - [ ] Start working on documentation
+- [ ] Setup gitbook
 - [ ] Autodeploy gitbook to surge?
 - [ ] Get a design from Dezzign
 - [ ] Keep test coverage at 100%
-- [ ] Internationalization
+- [x] Internationalization
+- [ ] History state
 - [ ] Add an API [Automotivated.engine( )](https://github.com/Automotivated/engine)
 - [ ] Create a store module for the app
-  - [ ] options
-  - [ ] api
+  - [x] options
+  - [x] api
   - [ ] global app states
 - [ ] Create a store module for the filters
-  - [ ] Sourcelists
-  - [ ] Data
+  - [ ] Masterdata
+  - [ ] Active filters
+  - [ ] Reset filters
   - [ ] Parsing
 - [ ] Create a store module for the results
   - [ ] Dummy content
-  - [ ] Overview rendering
-- [ ] Active filters
-- [ ] Filters
-  - [ ] Search filter
-  - [ ] Multi filter
-  - [ ] Range filter
-- [ ] Loading
-- [ ] Error notifications
-- [ ] Modal
-- [ ] Pagination
-- [ ] Grid results
-- [ ] Row results
-- [ ] Sorting
-- [ ] Switch overview rendering
-- [ ] Switch overview count
-- [ ] Detail page
-
+- [ ] Create a store module for the stats
+  - [ ] Display (grid/rows)
+  - [ ] Size (results per page)
+  - [ ] Pagination/offset
+  - [ ] Ordering (asc/desc)
+-[ ] Components
+	- [ ] Active filters
+	- [ ] Filters
+	  - [ ] Search filter
+	  - [ ] Multi filter
+	  - [ ] Multi-search filter
+	  - [ ] Range filter
+	  - [ ] Energylabel filter
+	  - [ ] Color filter
+	- [ ] Loading
+	- [ ] Modal
+		- [ ] Error notifications
+	- [ ] Pagination
+	- [ ] Grid results
+	- [ ] Row results
+	- [ ] Sorting
+	- [ ] Switch overview rendering
+	- [ ] Switch overview count
+	- [ ] Detail page
 
 ## Resources
 - http://vuejs.org/
