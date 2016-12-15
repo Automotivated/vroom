@@ -1,7 +1,7 @@
 {
   "ignore": [
     "**/build/**",
-    "**/node_modules/**"
+    "**/node_modules/**",
     "**/src/store/modules/filters/masterdata/**"
   ],
   "test": [
