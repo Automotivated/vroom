@@ -1,0 +1,17 @@
+/*
+ * Component - Credits
+ */
+
+@import 'settings/globals';
+
+.vrm-credits {
+	max-width: 100%;
+	flex: 1 1 100%;
+	color: $blackish;
+	padding: 10px 0;
+	text-align: center;
+
+	> small {
+		font-size: 1.2rem;
+	}
+}

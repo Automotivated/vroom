@@ -1,0 +1,17 @@
+/*
+ * Elements - Base
+ */
+
+@import 'settings/globals';
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+[v-cloak] {
+	display: none;
+}

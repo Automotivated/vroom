@@ -1,0 +1,40 @@
+/*
+ * Elements - Typography
+ */
+
+@import 'settings/globals';
+
+.amv-vrm {
+	font-family: $font-family;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	font-style: $font-style;
+	line-height: $font-line-height;
+	color: $font-color;
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: inherit;
+		font-weight: bold;
+		line-height: inherit;
+		color: $primary;
+		margin: 0 0 1em;
+	}
+
+	h1 { font-size: 2.8rem; }
+	h2 { font-size: 2.6rem; }
+	h3 { font-size: 2.4rem; }
+	h4 { font-size: 2.2rem; }
+	h4 { font-size: 2rem; }
+	h5 { font-size: 1.8rem; }
+	h6 { font-size: 1.6rem; }
+
+	a {
+		color: $primary;
+		text-decoration: none;
+		transition: color 150ms;
+
+		&:visited { color: darken($primary, 10%); }
+		&:hover { color: lighten($primary, 10%); }
+		&:active { color: lighten($primary, 20%); }
+	}
+}

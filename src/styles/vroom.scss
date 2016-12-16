@@ -1,0 +1,20 @@
+/*
+ * ~~~~~~~~~~~~~~~~~~~~
+ * Automotivated.vroom()
+ * https://github.com/Automotivated/vroom
+ * ~~~~~~~~~~~~~~~~~~~~
+ * Use this knowledge to your advantage:
+ *
+ * ITCSS - A sane, scalable, managed CSS architecture from CSS Wizardry.
+ * https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+ *
+ * BEMIT - Naming convention that borrows paradigms and patterns from ITCSS.
+ * http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
+ *
+ */
+
+.amv-vrm {
+	display: flex;
+	flex-flow: wrap row;
+	width: 100%;
+}

@@ -10,6 +10,12 @@
 
 
 <script>
+// import styles
+import 'elements/base'
+import 'elements/typography'
+import 'vroom'
+
+// import templates
 import Loader from './views/Loader'
 import Topbar from './views/Topbar'
 import Sidebar from './views/Sidebar'

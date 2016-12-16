@@ -1,3 +1,9 @@
+/*
+ * Component - Loader
+ */
+
+@import 'settings/globals';
+
 .amv-vrm {
 	.vrm-loader {
 		z-index: 9999;
@@ -9,7 +15,7 @@
 
 		&.vrm-loading {
 			width: 100%;
-			background: #000000;
+			background: $blackish;
 			transition: width 1s;
 		}
 	}
