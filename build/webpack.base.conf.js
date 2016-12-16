@@ -69,15 +69,6 @@ module.exports = {
 				include: projectRoot,
 				exclude: /node_modules/
 			}, {
-				test: /\.scss$/,
-				loaders: [
-					'style',
-					'css',
-					'postcss',
-					'sass'
-				],
-				include: /src\/styles/
-			}, {
 				test: /\.json$/,
 				loader: 'json'
 			}, {

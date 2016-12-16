@@ -13,6 +13,18 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
 module.exports = merge(baseWebpackConfig, {
   // eval-source-map is faster for development
   devtool: '#eval-source-map',
+  module: {
+  	loaders: [{
+  		test: /\.scss$/,
+			loaders: [
+				'style',
+				'css',
+				'postcss',
+				'sass'
+			],
+			include: /src\/styles/
+  	}]
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': config.dev.env

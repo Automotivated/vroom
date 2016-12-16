@@ -12,7 +12,11 @@ var env = process.env.NODE_ENV === 'testing'
 
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
-    loaders: utils.styleLoaders({ sourceMap: config.build.productionSourceMap, extract: true })
+    loaders: [{
+    	test: /\.scss$/,
+			loader: ExtractTextPlugin.extract('style', 'css!postcss!sass'),
+			include: /src\/styles/
+		}]
   },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
@@ -32,8 +36,11 @@ var webpackConfig = merge(baseWebpackConfig, {
       'process.env': env
     }),
     new webpack.optimize.UglifyJsPlugin({
+    	beautify: false,
+			comments: false,
       compress: {
-        warnings: false
+        warnings: false,
+        drop_console: true
       }
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),

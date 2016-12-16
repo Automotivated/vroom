@@ -23,6 +23,8 @@ rm('-rf', assetsPath)
 mkdir('-p', assetsPath)
 cp('-R', 'static/*', assetsPath)
 
+console.log(webpackConfig.module.loaders)
+
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()
   if (err) throw err
