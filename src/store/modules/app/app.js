@@ -48,7 +48,7 @@ export default {
 		loading: state => state.loader.loading,
 		options: state => state.options,
 		api: state => state.api,
-		loadingDuration (state) {
+		loadingDelay (state) {
 			const delays = state.loader.delays
 			var sum = delays.reduce(function (a, b) {
 				return a + b

@@ -1,0 +1,21 @@
+/**
+ * Component - Loader
+ */
+
+.amv-vrm {
+	.vrm-loader {
+		z-index: 9999;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 4px;
+		background: #acacac;
+
+		&.vrm-loading {
+			width: 100%;
+			background: #000000;
+			transition: width 1s;
+		}
+	}
+}

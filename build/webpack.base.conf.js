@@ -26,7 +26,8 @@ module.exports = {
       'vue$': 'vue/dist/vue.common.js',
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
+      'views': path.resolve(__dirname, '../src/views'),
+      'styles': path.resolve(__dirname, '../src/styles')
     }
   },
   resolveLoader: {
@@ -51,26 +52,31 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue'
-      },
-      {
+      }, {
         test: /\.js$/,
         loader: 'babel',
         include: projectRoot,
         exclude: /node_modules/
-      },
-      {
+      }, {
+				test: /\.scss$/,
+				loaders: [
+					'style',
+					'css',
+					'postcss',
+					'sass'
+				],
+				include: /src\/styles/
+			}, {
         test: /\.json$/,
         loader: 'json'
-      },
-      {
+      }, {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url',
         query: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
-      },
-      {
+      }, {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url',
         query: {
