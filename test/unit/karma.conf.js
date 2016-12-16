@@ -16,6 +16,18 @@ var webpackConfig = merge(baseConfig, {
 			js: 'isparta'
 		}
 	},
+	module: {
+  	loaders: [{
+  		test: /\.scss$/,
+			loaders: [
+				'style',
+				'css',
+				'postcss',
+				'sass'
+			],
+			include: /src\/styles/
+  	}]
+  },
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': require('../../config/test.env')

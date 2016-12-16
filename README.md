@@ -68,7 +68,7 @@ npm run build
 ```
 
 ## [Testing](https://www.youtube.com/watch?v=b8Lol5ce-e0)
-The whole app is and should be testable via unit test. New added code must be added to a test. Unit tests are run by Karma with Jasmine.<br>
+The whole app is and should be testable via unit test. New added code must be added to a test. Unit tests are run by Karma with Sinon and Chai.<br>
 The following command will run all tests in tests/unit
 ```sh
 npm run test
