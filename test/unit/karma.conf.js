@@ -17,8 +17,8 @@ var webpackConfig = merge(baseConfig, {
 		}
 	},
 	module: {
-  	loaders: [{
-  		test: /\.scss$/,
+		loaders: [{
+			test: /\.scss$/,
 			loaders: [
 				'style',
 				'css',
@@ -26,8 +26,8 @@ var webpackConfig = merge(baseConfig, {
 				'sass'
 			],
 			include: /src\/styles/
-  	}]
-  },
+		}]
+	},
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': require('../../config/test.env')
