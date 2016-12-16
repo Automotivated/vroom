@@ -1,6 +1,6 @@
 <template>
 	<header>
-		<h1 v-text="heading"></h1>
+		<h1 v-text="heading" @click.prevent="setLoading()"></h1>
 		<p>
 			{{ $t('filters.masterdata.body.label') }}
 		</p>
@@ -13,6 +13,11 @@ export default {
 	data () {
 		return {
 			heading: 'Booo!'
+		}
+	},
+	methods: {
+		setLoading () {
+			this.$store.dispatch('toggleLoading')
 		}
 	}
 }

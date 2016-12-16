@@ -39,15 +39,15 @@ describe('App store', () => {
 	describe('delay should return an average', () => {
 		it('should return a int', () => {
 			vm.$store.dispatch('addDelay', 600)
-			expect(vm.$store.getters.loadingDuration).to.be.an('number')
-			expect(vm.$store.getters.loadingDuration).to.equal(700)
+			expect(vm.$store.getters.loadingDelay).to.be.an('number')
+			expect(vm.$store.getters.loadingDelay).to.equal(700)
 		})
 		it('should return the average', () => {
 			for (let i = 0; i < 10; i++) {
 				vm.$store.dispatch('addDelay', 800)
 			}
-			expect(vm.$store.getters.loadingDuration).to.be.an('number')
-			expect(vm.$store.getters.loadingDuration).to.equal(800)
+			expect(vm.$store.getters.loadingDelay).to.be.an('number')
+			expect(vm.$store.getters.loadingDelay).to.equal(800)
 		})
 	})
 
@@ -105,7 +105,7 @@ describe('App store', () => {
 		// })
 		it('should update loading', () => {
 			expect(vm.$store.getters.loading).to.equal(false)
-			vm.$store.dispatch('setLoading', true)
+			vm.$store.dispatch('toggleLoading')
 			expect(vm.$store.getters.loading).to.equal(true)
 		})
 	})

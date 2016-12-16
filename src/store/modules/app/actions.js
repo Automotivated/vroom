@@ -33,6 +33,6 @@ export const addDelay = ({ commit, state }, delay) => {
 /**
  * setLoading
  */
-export const setLoading = ({ commit, state }, loading) => {
-	commit(types.LOADING, loading)
+export const toggleLoading = ({ commit, state }) => {
+	commit(types.TOGGLE_LOADING)
 }

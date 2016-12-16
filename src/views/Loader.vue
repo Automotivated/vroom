@@ -3,20 +3,20 @@
 </template>
 
 <script>
-	// import styles
-	import 'components/loader'
+// import styles
+import 'components/loader'
 
-	// import scripts
-	import { mapGetters } from 'vuex'
+// import scripts
+import { mapGetters } from 'vuex'
 
-	// import scripts
-	export default {
-		name: 'Loader',
-		computed: {
-			...mapGetters([
-				'loading',
-				'loadingDelay'
-			])
-		}
+// import scripts
+export default {
+	name: 'Loader',
+	computed: {
+		...mapGetters([
+			'loading',
+			'loadingDelay'
+		])
 	}
+}
 </script>

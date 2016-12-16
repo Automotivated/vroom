@@ -25,8 +25,8 @@ export default {
 	},
 	mutations: {
 		// Update loading state
-		[types.LOADING] (state, loading) {
-			Vue.set(state.loader, 'loading', loading)
+		[types.TOGGLE_LOADING] (state) {
+			Vue.set(state.loader, 'loading', !state.loader.loading)
 		},
 		// Adds a delay to the stack with a maximum of 10
 		[types.ADD_DELAY] (state, delay) {
