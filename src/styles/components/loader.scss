@@ -12,10 +12,10 @@
 		left: 0;
 		width: 0;
 		height: 4px;
+		background: $primary;
 
 		&.vrm-loading {
 			width: 100%;
-			background: $blackish;
 			transition: width 1s;
 		}
 	}

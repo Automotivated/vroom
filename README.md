@@ -16,7 +16,6 @@ Because of several reasons, the development of vroom v0.0.1 has been discontinue
 Starting fresh, starting something awesome! We're expecting the same output, so don't worry! The project is started this time with [vue-cli](https://github.com/vuejs/vue-cli)
 > Thanks to [Dezzign](http://www.dezzign.nl/) we won't rely anymore on a default design (materialize) but are getting our own brandnew look and feel. Customizable to your own needs!
 
-
 ## Before we begin
 Put on some nice [Electro Swing](https://www.youtube.com/watch?v=aUn2HvekSZY) and make sure you got the following applications installed:
 
