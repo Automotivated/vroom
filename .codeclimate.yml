@@ -29,3 +29,4 @@ exclude_paths:
   - test/
   - build/
   - src/store/modules/filters/masterdata/*
+  - src/translations/*
