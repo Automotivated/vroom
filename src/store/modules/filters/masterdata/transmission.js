@@ -2,7 +2,7 @@
  * Masterdata for transmission types
  */
 export const transmission = {
-	type: 'multi',
+	type: 'multiple',
 	label: 'filters.masterdata.transmission.label',
 	key: 'transmission',
 	active: [],

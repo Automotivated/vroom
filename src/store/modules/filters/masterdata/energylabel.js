@@ -2,7 +2,7 @@
  * Masterdata for energylabel types
  */
 export const energylabel = {
-	type: 'multi',
+	type: 'energylabel',
 	label: 'filters.masterdata.energylabel.label',
 	key: 'energylabel',
 	active: [],

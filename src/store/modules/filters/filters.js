@@ -61,6 +61,28 @@ const filters = {
 		filteredActiveFilters: (state) => {
 			var stack = state.filters.activeFilters
 			return stack
+		},
+		/**
+		 * filteredFilters
+		 * Returns a filtered list in order that the user specifies
+		 */
+		filteredFilters: (state, getters, store) => {
+			var filtered = []
+
+			for (var filter of store.app.options.availableFilters) {
+				const key = (typeof state.filters[filter] !== 'undefined')
+					? filter
+					: false
+				if (key !== false) {
+					const vFilter = state.filters[key]
+					// Are we going to sort on checked on top?
+					// if (vFilter.type === 'multi') {
+					// 	vFilter.options = orderOptions(vFilter)
+					// }
+					filtered.push(vFilter)
+				}
+			}
+			return filtered
 		}
 	},
 	actions

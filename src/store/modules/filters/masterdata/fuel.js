@@ -2,7 +2,7 @@
  * Masterdata for fuel types
  */
 export const fuel = {
-	type: 'multi',
+	type: 'multiple',
 	label: 'filters.masterdata.fuel.label',
 	key: 'fuel',
 	active: [],
@@ -12,7 +12,7 @@ export const fuel = {
 		total: 0
 	}, {
 		label: 'filters.masterdata.fuel.options.diesel',
-		value: '',
+		value: 'diesel',
 		total: 0
 	}, {
 		label: 'filters.masterdata.fuel.options.electric',

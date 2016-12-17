@@ -70,12 +70,20 @@ module.exports = {
 				test: /\.json$/,
 				loader: 'json'
 			}, {
+				test: /\.svg$/,
+				loaders: [
+					'raw',
+					'svgo?useConfig=svgo'
+				],
+				include: /src\/assets\/svg/
+			}, {
 				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
 				loader: 'url',
 				query: {
 					limit: 10000,
 					name: utils.assetsPath('img/[name].[hash:7].[ext]')
-				}
+				},
+				exclude: /src\/assets\/svg/
 			}, {
 				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
 				loader: 'url',

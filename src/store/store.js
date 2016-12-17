@@ -16,10 +16,10 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
 	modules: {
-		app,
-		filters,
-		results,
-		stats,
+		app: app,
+		filters: filters,
+		results: results,
+		stats: stats,
 		i18n: vuexI18n.store
 	}
 })

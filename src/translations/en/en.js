@@ -2,10 +2,16 @@
  * English language set
  */
 export const translationsEn = {
+	global: {
+		results: 'Results',
+		clear_filters: 'Clear filters'
+	},
 	filters: {
 		masterdata: {
 			body: {
 				label: 'Body',
+				more: 'All bodies',
+				less: 'Show less',
 				options: {
 					hatchback: 'Hatchback',
 					mpv: 'MPV',
@@ -16,6 +22,162 @@ export const translationsEn = {
 					cabriolet: 'Cabriolet',
 					coupe: 'Coupé',
 					remaining: 'Remaining'
+				}
+			},
+			additional_tax: {
+				label: 'Additional tax',
+				more: 'All additional taxes',
+				less: 'Show less'
+			},
+			color: {
+				label: 'Color',
+				more: 'All colors',
+				less: 'Less colors',
+				options: {
+					grey: 'Grey',
+					black: 'Black',
+					white: 'White',
+					blue: 'Blue',
+					silver: 'Silver',
+					red: 'Red',
+					beige: 'Beige',
+					brown: 'Brown',
+					yellow: 'Yellow',
+					purple: 'Purple',
+					green: 'Green',
+					orange: 'Orange',
+					cream: 'Cream',
+					remaining: 'Remaining'
+				}
+			},
+			doors: {
+				label: 'Doors',
+				more: 'Show all doors',
+				less: 'Show less'
+			},
+			energylabel: {
+				label: 'Energylabel'
+			},
+			engine_capacity: {
+				label: 'Engine capacity',
+				from: {
+					label: 'Engine capacity from'
+				},
+				to: {
+					label: 'Engine capacity to'
+				}
+			},
+			fuel: {
+				label: 'Fuel',
+				more: 'All fuel types',
+				less: 'Show less',
+				options: {
+					petrol: 'Petrol',
+					diesel: 'Diesel',
+					electric: 'Electric',
+					hybrid: 'Hybrid',
+					lpg: 'LPG',
+					lpg_g3: 'LPG G3',
+					ng: 'Natural gas'
+				}
+			},
+			make: {
+				label: 'Make',
+				more: 'All makes',
+				less: 'Show less'
+			},
+			mileage: {
+				label: 'Mileage',
+				from: {
+					label: 'Mileage from'
+				},
+				to: {
+					label: 'Mileage to'
+				}
+			},
+			model: {
+				label: 'model',
+				more: 'All models',
+				less: 'Show less models'
+			},
+			options: {
+				label: 'Options',
+				more: 'All options',
+				less: 'Less options',
+				options: {
+					abs: 'ABS',
+					airbags: 'Airbags',
+					air_conditioning: 'Air conditioning',
+					alarm: 'Alarm',
+					central_locking: 'Central locking',
+					climate_control: 'Climate Control',
+					cruise_control: 'Cruise Control',
+					power_windows: 'Power windows',
+					leather_furnishing: 'Leather furnishing',
+					alloy_wheels: 'Alloy wheels',
+					fog_lights: 'Fog lights',
+					navigation_system: 'Navigation system',
+					parking_sensors: 'Parking sensors',
+					radio_cd: 'Radio/CD',
+					rain_sensor: 'Rain sensor',
+					sunroof: 'Sunroof',
+					immobilizer: 'Immobilizer',
+					seat_heating: 'Seat heating',
+					power_steering: 'Power steering',
+					towbar: 'Towbar',
+					xenon_lights: 'Xenon ligths'
+				}
+			},
+			power: {
+				label: 'Horsepower',
+				from: {
+					label: 'Horsepower from'
+				},
+				to: {
+					label: 'Horsepower to'
+				}
+			},
+			search: {
+				label: 'Keyword'
+			},
+			price: {
+				label: 'Price',
+				from: {
+					label: 'Price from'
+				},
+				to: {
+					label: 'Price to'
+				}
+			},
+			transmission: {
+				label: 'Transmission',
+				options: {
+					manual: 'Manual',
+					automatic: 'Automatic'
+				}
+			},
+			type: {
+				label: 'Type',
+				options: {
+					used: 'Used',
+					new: 'New',
+					demo: 'Demo'
+				}
+			},
+			vehicle_type: {
+				label: 'Vehicle type',
+				options: {
+					car: 'Car',
+					company: 'Company'
+				}
+			},
+			year: {
+				label: 'Year',
+				from: {
+					label: 'Year from'
+				},
+				to: {
+					label: 'Year to'
 				}
 			}
 		}

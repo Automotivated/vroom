@@ -2,7 +2,7 @@
  * Masterdata for doors types
  */
 export const doors = {
-	type: 'multi',
+	type: 'multiple',
 	label: 'filters.masterdata.doors.label',
 	key: 'doors',
 	active: [],

@@ -2,7 +2,7 @@
  * Masterdata for type types
  */
 export const type = {
-	type: 'multi',
+	type: 'multiple',
 	label: 'filters.masterdata.type.label',
 	key: 'type',
 	active: [],

@@ -2,7 +2,7 @@
  * Masterdata for model types
  */
 export const model = {
-	type: 'multi-search',
+	type: 'multiple-search',
 	label: 'filters.masterdata.model.label',
 	key: 'model',
 	active: [],

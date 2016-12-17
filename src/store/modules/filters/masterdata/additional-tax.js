@@ -2,7 +2,7 @@
  * Masterdata for additional tax
  */
 export const additionalTax = {
-	type: 'multi',
+	type: 'multiple',
 	label: 'filters.masterdata.additional_tax.label',
 	key: 'additional-tax',
 	active: [],

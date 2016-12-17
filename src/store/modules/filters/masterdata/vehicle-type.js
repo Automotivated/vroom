@@ -2,7 +2,7 @@
  * Masterdata for vehicle-type vehicle-types
  */
 export const vehicleType = {
-	type: 'multi',
+	type: 'multiple',
 	label: 'filters.masterdata.vehicle_type.label',
 	key: 'vehicle-type',
 	active: [],

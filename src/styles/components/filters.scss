@@ -1,0 +1,17 @@
+/*
+ * Component - Filters
+ */
+
+@import 'settings/globals';
+
+.vrm-filters {
+	display: flex;
+	flex-flow: wrap row;
+	margin: 0;
+	padding: 0;
+
+	.vrm-filter {
+		max-width: 100%;
+		flex: 1 1 100%;
+	}
+}

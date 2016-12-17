@@ -1,0 +1,28 @@
+/*
+ * Component - Search
+ */
+
+@import 'settings/globals';
+@import 'components/button';
+
+.vrm-search {
+	position: relative;
+	width: 100%;
+
+	input {
+		margin-bottom: 0;
+		padding-right: $font-size * 2.5;
+	}
+	button {
+		@extend .vrm-button;
+		@extend .vrm-button--icon;
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		margin: 0;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}

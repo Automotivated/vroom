@@ -2,7 +2,7 @@
  * Masterdata for body types
  */
 export const body = {
-	type: 'multi',
+	type: 'multiple',
 	label: 'filters.masterdata.body.label',
 	key: 'body',
 	active: [],
@@ -11,7 +11,7 @@ export const body = {
 		value: 'hatchback',
 		total: 0
 	}, {
-		label: 'filters.masterdata.body.mpv',
+		label: 'filters.masterdata.body.options.mpv',
 		value: 'mpv',
 		total: 0
 	}, {

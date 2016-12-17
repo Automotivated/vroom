@@ -1,0 +1,36 @@
+/*
+ * Component - Multiple
+ */
+
+@import 'settings/globals';
+
+.vrm-filter {
+	&__multiple {
+		margin: 0 0 10px;
+		h5 {
+			color: $blackish;
+			margin: 0;
+		}
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			-webkit-margin-before: 0;
+			-webkit-margin-after: 0;
+
+			li {
+				width: 100%;
+				label {
+					cursor: pointer;
+					margin: 0;
+					font-size: 1.6rem;
+					color: $blackish;
+				}
+				span {
+					color: $secondary;
+					float: right;
+				}
+			}
+		}
+	}
+}

@@ -2,7 +2,7 @@
  * Masterdata for options types
  */
 export const options = {
-	type: 'multi',
+	type: 'multiple',
 	label: 'filters.masterdata.options.label',
 	key: 'options',
 	active: [],

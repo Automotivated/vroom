@@ -2,7 +2,7 @@
  * Masterdata for color types
  */
 export const color = {
-	type: 'multi',
+	type: 'color',
 	label: 'filters.masterdata.color.label',
 	key: 'color',
 	active: [],

@@ -2,7 +2,7 @@
  * Masterdata for make types
  */
 export const make = {
-	type: 'multi',
+	type: 'multiple',
 	label: 'filters.masterdata.make.label',
 	key: 'make',
 	active: [],

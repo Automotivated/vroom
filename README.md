@@ -115,7 +115,7 @@ Before we can show some data, we need to establish a connection to the api serve
 `overviewCount` is the amount of hits per page<br>
 `overviewRendering` is what we default want to start with (`rows` or `grid`)<br>
 `debounce` wait with calling the api when this little timer is finished<br>
-`filterOrder` orders and enables filters<br>
+`availableFilters` orders and enables filters<br>
 `language` set the language of the application<br>
 
 A typical integration will look something like this
@@ -133,7 +133,7 @@ A typical integration will look something like this
 				overviewCount: 24,
 				overviewRendering: 'grid',
 				debounce: 400,
-				filterOrder: ['search', 'fuel', 'price', 'year', 'body', ...],
+				availableFilters: ['keyword', 'fuel', 'price', 'year', 'body', ...],
 				language: 'nl'
 			});
 		}
@@ -153,7 +153,7 @@ Because we rebooted the project, this list will grow and grow before release. Th
 - [ ] Setup gitbook
 - [ ] Autodeploy gitbook to surge?
 - [ ] Get a design from Dezzign
-- [ ] Keep test coverage at 100%
+- [ ] Get test coverage as high as necessary
 - [x] Internationalization
 - [ ] History state
 - [ ] Add an API [Automotivated.engine( )](https://github.com/Automotivated/engine)
