@@ -17,7 +17,7 @@ export default {
 	},
 	methods: {
 		setLoading () {
-			this.$store.dispatch('toggleLoading')
+			this.$store.dispatch('app/toggleLoading')
 		}
 	}
 }

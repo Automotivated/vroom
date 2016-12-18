@@ -13,10 +13,10 @@ import { mapGetters } from 'vuex'
 export default {
 	name: 'Loader',
 	computed: {
-		...mapGetters([
-			'loading',
-			'loadingDelay'
-		])
+		...mapGetters({
+			loading: 'app/loading',
+			loadingDelay: 'app/loadingDelay'
+		})
 	}
 }
 </script>

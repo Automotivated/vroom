@@ -4,7 +4,7 @@
  */
 
 /**
- * isActiveOption
+ * inArray
  * Checks wheter the option (needle) exists in the active array (haystack)
  */
 function inArray (needle, haystack) {

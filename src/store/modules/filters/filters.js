@@ -25,6 +25,7 @@ import { vehicleType } from './masterdata/vehicle-type.js'
 import { year } from './masterdata/year.js'
 
 const filters = {
+	namespaced: true,
 	state: {
 		active: [],
 		activeFilters: [],

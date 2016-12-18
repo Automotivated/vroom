@@ -15,6 +15,7 @@ import stats from './modules/stats/stats'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
+	strict: true,
 	modules: {
 		app: app,
 		filters: filters,

@@ -32,7 +32,7 @@ if (process.env.NODE_ENV !== 'production') {
 			store,
 			render: h => h(Vroom),
 			created () {
-				this.$store.dispatch('updateOptions', options)
+				this.$store.dispatch('app/updateOptions', options)
 			}
 		})
 	}

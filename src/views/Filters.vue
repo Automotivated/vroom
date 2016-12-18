@@ -31,7 +31,9 @@ export default {
 		Energylabel
 	},
 	computed: {
-		...mapGetters(['filteredFilters'])
+		...mapGetters({
+			filteredFilters: 'filters/filteredFilters'
+		})
 	}
 }
 </script>

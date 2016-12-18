@@ -17,7 +17,9 @@
 	export default {
 		name: 'Stats',
 		computed: {
-			...mapGetters(['total'])
+			...mapGetters({
+				total: 'stats/total'
+			})
 		},
 		methods: {
 			normalizeNumber

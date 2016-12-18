@@ -8,6 +8,7 @@ import * as types from '../../types'
 import * as actions from './actions'
 
 export default {
+	namespaced: true,
 	state: {
 		total: 0,
 		order: null,
