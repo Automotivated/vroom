@@ -14,7 +14,7 @@ describe('App store', () => {
 		vm = new Vue({
 			store: new Vuex.Store({
 				modules: {
-					app,
+					app: app,
 					mock: {
 						mutations: {
 							[types.UPDATE_DISPLAY] (state, display) {
@@ -32,44 +32,44 @@ describe('App store', () => {
 
 	describe('state should be prefilled', () => {
 		it('should be an object', () => {
-			expect(vm.$store.getters.options).to.be.an('object')
+			expect(vm.$store.getters['app/options']).to.be.an('object')
 		})
 	})
 
 	describe('delay should return an average', () => {
 		it('should return a int', () => {
-			vm.$store.dispatch('addDelay', 600)
-			expect(vm.$store.getters.loadingDelay).to.be.an('number')
-			expect(vm.$store.getters.loadingDelay).to.equal(700)
+			vm.$store.dispatch('app/addDelay', 600)
+			expect(vm.$store.getters['app/loadingDelay']).to.be.an('number')
+			expect(vm.$store.getters['app/loadingDelay']).to.equal(700)
 		})
 		it('should return the average', () => {
 			for (let i = 0; i < 10; i++) {
-				vm.$store.dispatch('addDelay', 800)
+				vm.$store.dispatch('app/addDelay', 800)
 			}
-			expect(vm.$store.getters.loadingDelay).to.be.an('number')
-			expect(vm.$store.getters.loadingDelay).to.equal(800)
+			expect(vm.$store.getters['app/loadingDelay']).to.be.an('number')
+			expect(vm.$store.getters['app/loadingDelay']).to.equal(800)
 		})
 	})
 
 	describe('options should be valid', () => {
 		it('should return default options', () => {
-			const options = vm.$store.getters.options
+			const options = vm.$store.getters['app/options']
 			expect(options).to.be.an('object')
 			expect(options.debounce).to.be.an('number')
 			expect(options.availableFilters).to.be.an('array')
 		})
 
 		it('should overwrite the default options', () => {
-			const options = vm.$store.getters.options
-			vm.$store.dispatch('updateOptions', {
+			const options = vm.$store.getters['app/options']
+			vm.$store.dispatch('app/updateOptions', {
 				debounce: 2000
 			})
 			expect(options.debounce).to.equal(2000)
 		})
 
 		it('should still update default options', () => {
-			const options = vm.$store.getters.options
-			vm.$store.dispatch('updateOptions', {
+			const options = vm.$store.getters['app/options']
+			vm.$store.dispatch('app/updateOptions', {
 				debounce: 2000,
 				overviewCount: 24,
 				overviewRendering: 'grid'
@@ -80,9 +80,9 @@ describe('App store', () => {
 
 	describe('options should be valid', () => {
 		it('should update the default options', () => {
-			const api = vm.$store.getters.api
+			const api = vm.$store.getters['app/api']
 			expect(api.endpoint).to.equal('https://engine.automotivated.nl/api')
-			vm.$store.dispatch('updateOptions', {
+			vm.$store.dispatch('app/updateOptions', {
 				api: {
 					key: 'MySecretKey'
 				}
@@ -95,18 +95,18 @@ describe('App store', () => {
 	describe('default app state should change', () => {
 		// THIS SHOULD WORK....
 		// it('should update loading', done => {
-		// 	var loading = vm.$store.getters.loading
+		// 	var loading = vm.$store.getters['app/loading']
 		// 	expect(loading).to.equal(false)
-		// 	vm.$store.dispatch('setLoading', true)
+		// 	vm.$store.dispatch('app/setLoading', true)
 		// 	Vue.nextTick(() => {
 		// 		expect(loading).to.equal(true)
 		// 		done()
 		// 	})
 		// })
 		it('should update loading', () => {
-			expect(vm.$store.getters.loading).to.equal(false)
-			vm.$store.dispatch('toggleLoading')
-			expect(vm.$store.getters.loading).to.equal(true)
+			expect(vm.$store.getters['app/loading']).to.equal(false)
+			vm.$store.dispatch('app/toggleLoading')
+			expect(vm.$store.getters['app/loading']).to.equal(true)
 		})
 	})
 })

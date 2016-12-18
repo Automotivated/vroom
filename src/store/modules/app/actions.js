@@ -15,10 +15,10 @@ export const updateOptions = ({ commit, state }, options) => {
 		delete options.api
 	}
 	if (typeof options.overviewRendering !== 'undefined') {
-		commit(types.UPDATE_DISPLAY, options.overviewRendering)
+		commit(types.UPDATE_DISPLAY, options.overviewRendering, { root: true })
 	}
 	if (typeof options.overviewCount !== 'undefined') {
-		commit(types.UPDATE_SIZE, options.overviewCount)
+		commit(types.UPDATE_SIZE, options.overviewCount, { root: true })
 	}
 	if (Object.keys(options).length > 0) {
 		commit(types.UPDATE_OPTIONS, options)

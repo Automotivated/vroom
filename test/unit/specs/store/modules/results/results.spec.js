@@ -21,11 +21,11 @@ describe('Results store', () => {
 
 	describe('results should be null when created', () => {
 		it('results should be default null', () => {
-			expect(vm.$store.getters.results).to.equal(null)
+			expect(vm.$store.getters['results/results']).to.equal(null)
 		})
 		it('should update when triggered', () => {
-			vm.$store.dispatch('getData')
-			expect(vm.$store.getters.results).to.be.an('object')
+			vm.$store.dispatch('results/getData')
+			expect(vm.$store.getters['results/results']).to.be.an('object')
 		})
 	})
 })
