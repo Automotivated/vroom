@@ -83,7 +83,11 @@ export default {
 			if (elm.checked === false) {
 				console.log('off', elm.name, elm.value)
 			} else {
-				console.log('on', elm.name, elm.value)
+				this.$store.dispatch('filters/addFilter', {
+					key: elm.name,
+					value: elm.value,
+					updateHistory: true
+				})
 			}
 		}
 	}

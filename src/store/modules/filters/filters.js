@@ -51,16 +51,13 @@ const filters = {
 		}
 	},
 	mutations: {
-		// adds an active option
-		[types.ADD_ACTIVE_OPTION] (state, filter) {
-			// const active = getActive(filter)
-			// push the new state
-			state.active.push(filter.value)
+		[types.ADD_FILTER] (state, filter) {
+			state.activeFilters.push(filter)
 		}
 	},
 	getters: {
 		filteredActiveFilters: (state) => {
-			var stack = state.filters.activeFilters
+			var stack = state.activeFilters
 			return stack
 		},
 		/**
