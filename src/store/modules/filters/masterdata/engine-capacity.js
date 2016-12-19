@@ -5,6 +5,7 @@ export const engineCapacity = {
 	type: 'range',
 	label: 'filters.masterdata.engine_capacity.label',
 	key: 'engine-capacity',
+	normalize: true,
 	from: {
 		label: 'filters.masterdata.engine_capacity.from.label',
 		active: []

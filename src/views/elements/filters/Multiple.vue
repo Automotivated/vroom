@@ -43,9 +43,11 @@ export default {
 		},
 		// toggle text that toggles
 		toggleText () {
-			return this.limited
-				? Vue.i18n.translate(this.filter.label.replace('label', 'more'))
-				: Vue.i18n.translate(this.filter.label.replace('label', 'less'))
+			return (
+				this.limited
+					? Vue.i18n.translate('filters.global.more')
+					: Vue.i18n.translate('filters.global.less')
+				) + '&hellip;'
 		},
 		// options for this filter to slice
 		visibleOptions () {

@@ -1,0 +1,41 @@
+/*
+ * Component - Multiple
+ */
+
+@import 'settings/globals';
+
+.vrm-filter {
+	&__range {
+		div {
+			position: relative;
+			.vrm-slider {
+				.vue-slider {
+					background-color: $grey;
+
+					.vue-slider-dot {
+						box-shadow: none;
+						background-color: $primary;
+					}
+					.vue-slider-process {
+						background-color: $primary;
+					}
+				}
+			}
+
+			div.vrm-range-inputs {
+				display: flex;
+
+				input {
+					flex: 1 1 auto;
+					text-align: right;
+					margin: 0;
+				}
+				span {
+					flex: 0 0 auto;
+					padding: 0 6px;
+					line-height: 2em;
+				}
+			}
+		}
+	}
+}

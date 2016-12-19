@@ -13,5 +13,14 @@
 	.vrm-filter {
 		max-width: 100%;
 		flex: 1 1 100%;
+
+		> :first-child {
+			margin: 0 0 10px;
+
+			h5 {
+				color: $blackish;
+				margin: 0;
+			}
+		}
 	}
 }

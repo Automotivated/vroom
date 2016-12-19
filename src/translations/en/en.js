@@ -3,15 +3,17 @@
  */
 export const translationsEn = {
 	global: {
-		results: 'Results',
-		clear_filters: 'Clear filters'
+		results: 'Results'
 	},
 	filters: {
+		global: {
+			clear_filters: 'Clear filters',
+			more: 'More',
+			less: 'Less'
+		},
 		masterdata: {
 			body: {
 				label: 'Body',
-				more: 'All bodies',
-				less: 'Show less',
 				options: {
 					hatchback: 'Hatchback',
 					mpv: 'MPV',
@@ -25,14 +27,10 @@ export const translationsEn = {
 				}
 			},
 			additional_tax: {
-				label: 'Additional tax',
-				more: 'All additional taxes',
-				less: 'Show less'
+				label: 'Additional tax'
 			},
 			color: {
 				label: 'Color',
-				more: 'All colors',
-				less: 'Less colors',
 				options: {
 					grey: 'Grey',
 					black: 'Black',
@@ -51,9 +49,7 @@ export const translationsEn = {
 				}
 			},
 			doors: {
-				label: 'Doors',
-				more: 'Show all doors',
-				less: 'Show less'
+				label: 'Doors'
 			},
 			energylabel: {
 				label: 'Energylabel'
@@ -69,8 +65,6 @@ export const translationsEn = {
 			},
 			fuel: {
 				label: 'Fuel',
-				more: 'All fuel types',
-				less: 'Show less',
 				options: {
 					petrol: 'Petrol',
 					diesel: 'Diesel',
@@ -82,9 +76,7 @@ export const translationsEn = {
 				}
 			},
 			make: {
-				label: 'Make',
-				more: 'All makes',
-				less: 'Show less'
+				label: 'Make'
 			},
 			mileage: {
 				label: 'Mileage',
@@ -96,14 +88,10 @@ export const translationsEn = {
 				}
 			},
 			model: {
-				label: 'model',
-				more: 'All models',
-				less: 'Show less models'
+				label: 'Model'
 			},
 			options: {
 				label: 'Options',
-				more: 'All options',
-				less: 'Less options',
 				options: {
 					abs: 'ABS',
 					airbags: 'Airbags',

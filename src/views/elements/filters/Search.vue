@@ -1,5 +1,5 @@
 <template>
-	<div class="vrm-search">
+	<div class="vrm-filter__search">
 		<input type="text" :name="filter.key" :value="filter.active[0]" :placeholder="getPlaceholderText" id="trefwoord_searchfield">
 		<button type="button"><i v-svg:glass></i></button>
 	</div>

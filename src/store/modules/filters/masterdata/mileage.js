@@ -5,6 +5,7 @@ export const mileage = {
 	type: 'range',
 	label: 'filters.masterdata.mileage.label',
 	key: 'mileage',
+	normalize: true,
 	from: {
 		label: 'filters.masterdata.mileage.from.label',
 		active: []
