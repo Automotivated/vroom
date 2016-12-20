@@ -7,6 +7,8 @@ export const translationsEn = {
 	},
 	filters: {
 		global: {
+			locale: 'en-US',
+			currency: 'USD',
 			clear_filters: 'Clear filters',
 			more: 'More',
 			less: 'Less'

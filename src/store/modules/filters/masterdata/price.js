@@ -5,7 +5,7 @@ export const price = {
 	type: 'range',
 	label: 'filters.masterdata.price.label',
 	key: 'price',
-	normalize: true,
+	locale: 'currency',
 	from: {
 		label: 'filters.masterdata.price.from.label',
 		active: []

@@ -8,7 +8,10 @@
 	&__range {
 		div {
 			position: relative;
+
 			.vrm-slider {
+				margin: 0 0 8px;
+
 				.vue-slider {
 					background-color: $grey;
 
@@ -22,18 +25,32 @@
 				}
 			}
 
-			div.vrm-range-inputs {
+			div.vrm-range {
 				display: flex;
+				align-items: center;
+				justify-content: center;
 
-				input {
+				span.vrm-range-input {
+					position: relative;
 					flex: 1 1 auto;
-					text-align: right;
-					margin: 0;
+
+					input {
+						width: 100%;
+						text-align: right;
+						margin: 0;
+						padding: 0 0.5em 0 1.2em;
+					}
+					label {
+						position: absolute;
+						left: 0.5em;
+						font-size: 1.2rem;
+						top: calc(50% - 0.6em);
+						color: $secondary;
+					}
 				}
-				span {
-					flex: 0 0 auto;
+
+				span.vrm-range-seperator {
 					padding: 0 6px;
-					line-height: 2em;
 				}
 			}
 		}
