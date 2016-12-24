@@ -128,7 +128,7 @@ export const translationsEn = {
 				}
 			},
 			search: {
-				label: 'Keyword'
+				label: 'Search'
 			},
 			price: {
 				label: 'Price',

@@ -43,14 +43,16 @@
 						width: 100%;
 						text-align: right;
 						margin: 0;
-						padding: 0 0.5em 0 1.2em;
+						padding: 0 0.5em 0 1.8em;
 					}
 					label {
+						display: inline-block;
 						position: absolute;
 						left: 0.5em;
-						font-size: 1.2rem;
-						top: calc(50% - 0.6em);
-						color: $secondary;
+						font-size: 0.8em;
+						height: 3.2rem;
+						top: calc(50% - 0.65em);
+						color: $textual-grey;
 					}
 				}
 

@@ -128,7 +128,7 @@ export const translationsNl = {
 				}
 			},
 			search: {
-				label: 'Trefwoord'
+				label: 'Zoeken'
 			},
 			price: {
 				label: 'Prijs',

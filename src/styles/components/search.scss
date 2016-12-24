@@ -13,7 +13,10 @@
 		input {
 			margin-bottom: 0;
 			padding-right: $font-size * 2.5;
+			height: $font-size * 2.4;
+			font-size: $font-size * 0.8;
 		}
+
 		button {
 			@extend .vrm-button;
 			@extend .vrm-button--icon;
@@ -25,6 +28,10 @@
 			margin: 0;
 			border-top-left-radius: 0;
 			border-bottom-left-radius: 0;
+
+			i {
+				font-size: 1.5em;
+			}
 		}
 	}
 }

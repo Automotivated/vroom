@@ -19,15 +19,65 @@
 				label {
 					cursor: pointer;
 					margin: 0;
-					font-size: 1.6rem;
-					color: $black-ish;
+					font-size: 1.4rem;
+					color: $slate-grey;
+					position: relative;
+					cursor: pointer;
+
+					&::selection {
+						background: transparent;
+					}
+
+					&:hover input + span {
+						box-shadow: 0 0 2px 0 rgba($primary, 0.7);
+					}
+
+					input + span {
+						border-radius: $border-radius;
+						background: $white;
+						content: "";
+						display: inline-block;
+						margin: 0 0.2em 0 0;
+						padding: 0;
+						vertical-align: middle;
+						width: 1em;
+						height: 1em;
+						background: $element-grey;
+						-webkit-backface-visibility: hidden;
+
+						&::after {
+							content: "✔";
+							display: block;
+							transform: scale(0);
+							transition: transform .2s;
+							color: $white;
+							font-size: 0.8em;
+							padding: 0 0 0 0.2em;
+						}
+					}
+					input {
+						position: absolute;
+						cursor: pointer;
+						opacity: 0;
+					}
+					input:checked + span {
+						background: $primary;
+					}
+					input:checked + span::after {
+						transform: scale(1);
+					}
 				}
 
-				span {
+				> span {
 					color: $secondary;
 					float: right;
 				}
 			}
+		}
+		a {
+			display: block;
+			margin: 0.6em 0 0;
+			font-size: 1.4rem;
 		}
 	}
 }

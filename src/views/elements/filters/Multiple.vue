@@ -3,14 +3,14 @@
 		<h5 @click="collapse">{{ $t(filter.label) }}</h5>
 		<ul>
 			<li v-for="option in visibleOptions">
-				<input
-					type="checkbox"
-					:id="getUniqueId(option.value)"
-					:name="filter.key"
-					:value="option.value"
-					:checked="inArray(option.value, filter.active)"
-					@change="updateFilter">
-				<label :for="getUniqueId(option.value)">
+				<label>
+					<input
+						type="checkbox"
+						:name="filter.key"
+						:value="option.value"
+						:checked="inArray(option.value, filter.active)"
+						@change="updateFilter">
+					<span></span>
 					{{ $t(option.label) }}
 				</label>
 				<span v-text="option.total"></span>
