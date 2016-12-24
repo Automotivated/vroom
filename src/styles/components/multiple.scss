@@ -15,12 +15,14 @@
 
 			li {
 				width: 100%;
+
 				label {
 					cursor: pointer;
 					margin: 0;
 					font-size: 1.6rem;
-					color: $blackish;
+					color: $black-ish;
 				}
+
 				span {
 					color: $secondary;
 					float: right;

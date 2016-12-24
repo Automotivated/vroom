@@ -1,9 +1,6 @@
 <template>
 	<header>
 		<h1 v-text="heading" @click.prevent="setLoading()"></h1>
-		<p>
-			{{ $t('filters.masterdata.body.label') }}
-		</p>
 		<active-filters></active-filters>
 	</div>
 </template>

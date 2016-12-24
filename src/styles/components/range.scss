@@ -13,12 +13,17 @@
 				margin: 0 0 8px;
 
 				.vue-slider {
-					background-color: $grey;
+					background-color: $element-grey;
 
 					.vue-slider-dot {
+						width: 16px !important;
+						height: 16px !important;
+						top: -6px !important;
+						border: 2px solid $white;
 						box-shadow: none;
 						background-color: $primary;
 					}
+
 					.vue-slider-process {
 						background-color: $primary;
 					}

@@ -5,20 +5,25 @@
 /* Colors */
 $base: #aaa;
 $white: #fff;
-$blackish: #282624;
+
 $stealth-grey: #afafaf;
 $black: #000;
-$primary: #3eb285;
+$primary: #3db383;
 $secondary: #e6e5ea;
-$grey: #eeeef0;
+
+$textual-grey: #bec3c7;
+$element-grey: #dce1e7;
+$black-ish: #6c6f72;
+$heading-black: #2e2e2e;
 
 /* Typography */
-$font-family: "Roboto", sans-serif;
+$font-family: 'Fira Sans', sans-serif;
 $font-size: 1.6rem;
 $font-line-height: 1.6;
-$font-weight: 300;
+$font-weight: normal;
 $font-style: normal;
-$font-color: $blackish;
+$font-stretch: normal;
+$font-color: $black-ish;
 
 /* Other */
 $border-radius: 2px;

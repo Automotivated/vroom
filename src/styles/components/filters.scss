@@ -13,13 +13,20 @@
 	.vrm-filter {
 		max-width: 100%;
 		flex: 1 1 100%;
+		padding: 1em 0;
+		border-top: 1px solid $element-grey;
+
+		&:first-of-type {
+			border-top: none;
+		}
+		&:last-of-type {
+			border-bottom: 1px solid $element-grey;
+		}
 
 		> :first-child {
-			margin: 0 0 10px;
-
 			h5 {
-				color: $blackish;
 				margin: 0;
+				cursor: pointer;
 			}
 		}
 	}
