@@ -77,12 +77,18 @@ module.exports = {
 				],
 				include: /src\/assets\/svg/
 			}, {
-				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-				loader: 'url',
-				query: {
-					limit: 10000,
-					name: utils.assetsPath('img/[name].[hash:7].[ext]')
-				},
+				// test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+				// loader: 'url',
+				// query: {
+				// 	limit: 10000,
+				// 	name: utils.assetsPath('img/[name].[hash:7].[ext]')
+				// },
+				// exclude: /src\/assets\/svg/
+				test: /\.(jpe?g|png|gif|svg)$/i,
+				loaders: [
+					'url?limit=2048',
+					'img?minimize'
+				],
 				exclude: /src\/assets\/svg/
 			}, {
 				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,

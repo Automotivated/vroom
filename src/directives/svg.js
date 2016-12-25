@@ -8,8 +8,10 @@ import Vue from 'vue'
 
 // import svg's
 import glass from '../assets/svg/glass.svg'
+import checked from '../assets/svg/checked.svg'
 
 const sprite = {
+	'checked': checked,
 	'glass': glass
 }
 

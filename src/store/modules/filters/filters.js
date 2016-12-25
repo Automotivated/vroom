@@ -53,6 +53,7 @@ const filters = {
 	mutations: {
 		[types.ADD_FILTER] (state, filter) {
 			state.activeFilters.push(filter)
+			state.filters[filter.key].active.push(filter.value)
 		}
 	},
 	getters: {

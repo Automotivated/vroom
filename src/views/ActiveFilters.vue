@@ -1,8 +1,6 @@
 <template>
 	<div class="vrm-active">
-		hoi
 		<div v-for="filter in activeFilters">
-			{{ filter }}
 		</div>
 	</div>
 </template>
