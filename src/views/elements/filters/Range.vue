@@ -2,7 +2,7 @@
 	<div class="vrm-filter__range" v-cloak>
 		<h5 @click="collapse">{{ $t(filter.label) }}</h5>
 		<div v-if="expanded">
-			<vue-slider ref="slider" v-bind="slider"></vue-slider>
+			<vue-slider ref="slider" v-bind="slider" @drag-end="updateFilter"></vue-slider>
 			<div class="vrm-range">
 				<span class="vrm-range-input">
 					<label :for="getUniqueId('from')" v-html="inputLabel"></label>
@@ -56,7 +56,7 @@ export default {
 				width: '100%',
 				lazy: true,
 				height: 4,
-				dotSize: 14,
+				dotSize: 18,
 				min: 0,
 				max: max,
 				interval: 1,
@@ -142,6 +142,17 @@ export default {
 		reformat (evt) {
 			var elm = evt.target || evt.srcElement
 			elm.value = this.parseNumber(elm.value)
+		},
+		updateFilter () {
+			this.$store.dispatch('filters/updateFilter', [{
+				key: this.filter.key + '[from]',
+				value: this.slider.value[0],
+				updateHistory: true
+			}, {
+				key: this.filter.key + '[to]',
+				value: this.slider.value[1],
+				updateHistory: true
+			}])
 		},
 		parseNumber (n) {
 			return n.replace(/[^0-9]+/g, '')

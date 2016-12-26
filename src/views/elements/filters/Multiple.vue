@@ -83,17 +83,17 @@ export default {
 		updateFilter (evt) {
 			var elm = evt.target || evt.srcElement
 			if (elm.checked === false) {
-				this.$store.dispatch('filters/removeFilter', {
+				this.$store.dispatch('filters/removeFilter', [{
 					key: elm.name,
 					value: elm.value,
 					updateHistory: true
-				})
+				}])
 			} else {
-				this.$store.dispatch('filters/addFilter', {
+				this.$store.dispatch('filters/addFilter', [{
 					key: elm.name,
 					value: elm.value,
 					updateHistory: true
-				})
+				}])
 			}
 		}
 	}
