@@ -5,12 +5,13 @@ export const power = {
 	type: 'range',
 	label: 'filters.masterdata.power.label',
 	key: 'power',
-	active: [],
 	from: {
-		label: 'filters.masterdata.power.from.label'
+		label: 'filters.masterdata.power.from.label',
+		active: []
 	},
 	to: {
-		label: 'filters.masterdata.power.to.label'
+		label: 'filters.masterdata.power.to.label',
+		active: []
 	},
 	options: [
 		50,

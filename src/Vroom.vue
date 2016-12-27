@@ -16,6 +16,9 @@ import 'elements/typography'
 import 'elements/forms'
 import 'vroom'
 
+// import scripts
+import { getHistory } from './filters/history'
+
 // import templates
 import Loader from './views/Loader'
 import Topbar from './views/Topbar'
@@ -37,13 +40,16 @@ export default {
 			error: {}
 		}
 	},
-	// vue is created
-	created () {
-
+	methods: {
+		getHistory
 	},
-	// vue is mounted
+	created () {
+		// Update the active filters with active query params
+		this.$store.dispatch('filters/addFilter', this.getHistory(), false)
+	},
 	mounted () {
-
+		// vue is mounted, so we're finished loading all offline contents
+		this.$store.dispatch('app/finishedInit')
 	},
 	watch: {
 

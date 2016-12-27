@@ -81,20 +81,15 @@ export default {
 			this.limited = !this.limited
 		},
 		updateFilter (evt) {
-			var elm = evt.target || evt.srcElement
-			if (elm.checked === false) {
-				this.$store.dispatch('filters/removeFilter', [{
-					key: elm.name,
-					value: elm.value,
-					updateHistory: true
-				}])
-			} else {
-				this.$store.dispatch('filters/addFilter', [{
-					key: elm.name,
-					value: elm.value,
-					updateHistory: true
-				}])
-			}
+			const elm = evt.target || evt.srcElement
+			const action = elm.checked === false
+				? 'filters/removeFilter'
+				: 'filters/addFilter'
+
+			this.$store.dispatch(action, [{
+				key: elm.name,
+				value: elm.value
+			}])
 		}
 	}
 }

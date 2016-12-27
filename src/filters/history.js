@@ -4,7 +4,9 @@
  */
 
 // eslint-disable-next-line no-useless-escape
-const arrayRegex = new RegExp(/\[(.+?)\]/, 'gi')
+const multiRegex = new RegExp(/\[\]/, 'gi')
+// eslint-disable-next-line no-useless-escape
+const rangeRegex = new RegExp(/\[(from|to)\]/, 'gi')
 
 /**
  * getHistory
@@ -17,15 +19,38 @@ function getHistory () {
 		var str = window.location.search.substring(1)
 		var parts = str.split('&')
 		parts.forEach(filter => {
-			filter = filter.replace(arrayRegex, '').split('=')
-			console.log(filter)
-			filters.push({
-				key: filter[0],
-				value: filter[1]
-			})
+			const range = filter.match(rangeRegex)
+			// range
+			if (range) {
+				filter = filter.replace(rangeRegex, '').split('=')
+				filters.push({
+					key: filter[0],
+					range: range[0].replace(/\W/g, ''),
+					value: getRealValue(filter[1])
+				})
+			// other filters
+			} else {
+				filter = filter.replace(multiRegex, '').split('=')
+				filters.push({
+					key: filter[0],
+					value: getRealValue(filter[1])
+				})
+			}
 		})
 	}
 	return filters
+}
+
+/**
+ * getValue
+ *
+ * Helper function to return an string or int
+ */
+function getRealValue (value) {
+	const intComparison = /^[+-]?\d+$/.test(value)
+	return intComparison
+		? parseInt(value)
+		: value
 }
 
 /**
@@ -35,34 +60,34 @@ function getHistory () {
  */
 function updateHistory (state) {
 	if (window.history.pushState) {
-		let locationState = '?'
+		console.log('todo')
+		// let locationState = '?'
+		// // loop over the active filters for state updates
+		// state.activeFilters.forEach((active, index) => {
+		// 	locationState += active.key
+		// 	locationState += (state.filters.active.key] && state.filters[active.key].type === 'multi')
+		// 		? '[]='
+		// 		: '='
+		// 	locationState += active.value + '&'
+		// })
+		// // fix the & at the end
+		// locationState = (locationState.length > 1)
+		// 	? locationState.slice(0, -1)
+		// 	: locationState
 
-		// loop over the active filters for state updates
-		state.filters.activeFilters.forEach((active, index) => {
-			locationState += active.key
-			locationState += (state.filters.filters[active.key] && state.filters.filters[active.key].type === 'multi')
-				? '[]='
-				: '='
-			locationState += active.value + '&'
-		})
-		// fix the & at the end
-		locationState = (locationState.length > 1)
-			? locationState.slice(0, -1)
-			: locationState
+		// // create a unique title
+		// let title = document.title
+		// title += locationState
+		// 	.replace(multiRegex, '')
+		// 	.replace(/=/g, ':')
+		// 	.replace(/&/g, ', ')
 
-		// create a unique title
-		let title = document.title
-		title += locationState
-			.replace(arrayRegex, '')
-			.replace(/=/g, ':')
-			.replace(/&/g, ', ')
-
-		// push it! push it real good
-		window.history.pushState(
-			state.filters.activeFilters,
-			title,
-			locationState
-		)
+		// // push it! push it real good
+		// window.history.pushState(
+		// 	state.filters.activeFilters,
+		// 	title,
+		// 	locationState
+		// )
 	}
 }
 

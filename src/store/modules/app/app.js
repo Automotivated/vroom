@@ -22,9 +22,13 @@ export default {
 		loader: {
 			loading: false,
 			delays: [800]
-		}
+		},
+		loaded: false
 	},
 	mutations: {
+		[types.FINISHED_INIT] (state) {
+			Vue.set(state, 'loaded', true)
+		},
 		// Update loading state
 		[types.TOGGLE_LOADING] (state) {
 			Vue.set(state.loader, 'loading', !state.loader.loading)

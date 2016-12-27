@@ -5,6 +5,12 @@
 import * as types from '../../types'
 
 /**
+ * finishedInit
+ */
+export const finishedInit = ({ commit, state }) => {
+	commit(types.FINISHED_INIT)
+}
+/**
  * updateOptions
  *
  * Get's called when creating the app to get the options in the state instead of a global window object :)

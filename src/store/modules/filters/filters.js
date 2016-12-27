@@ -53,7 +53,11 @@ const filters = {
 	mutations: {
 		[types.ADD_FILTER] (state, filter) {
 			state.activeFilters.push(filter)
-			state.filters[filter.key].active.push(filter.value)
+			if (filter.range) {
+				state.filters[filter.key][filter.range].active.push(filter.value)
+			} else {
+				state.filters[filter.key].active.push(filter.value)
+			}
 		}
 	},
 	getters: {

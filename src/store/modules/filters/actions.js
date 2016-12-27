@@ -3,29 +3,20 @@
  */
 
 import * as types from '../../types'
-
 import { updateHistory } from '../../../filters/history'
 
 /**
  * addFilter
  */
-export const addFilter = ({ commit, state }, payload) => {
-	let historyRenewal = false
-
+export const addFilter = ({ commit, state, rootState }, payload) => {
 	payload.forEach(filter => {
-		commit(types.ADD_FILTER, {
-			key: filter.key,
-			value: filter.value
-		})
-		if (!historyRenewal && filter.updateHistory) {
-			historyRenewal = !historyRenewal
-		}
+		commit(types.ADD_FILTER, filter)
 	})
-	if (historyRenewal) {
-		console.log('Update History: ' + historyRenewal)
+
+	// update the history
+	if (rootState.app.loaded) {
 		updateHistory(state)
 	}
-	// update the history
 }
 /**
  * removeFilter

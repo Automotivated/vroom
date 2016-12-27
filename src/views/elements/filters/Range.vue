@@ -50,7 +50,9 @@ export default {
 		vueSlider
 	},
 	data () {
-		var max = this.filter.options.length - 1
+		const max = this.filter.options.length - 1
+		const start = this.getRangeKey(this.filter.from.active[0]) || 0
+		const end = this.getRangeKey(this.filter.to.active[0]) || max
 		return {
 			slider: {
 				width: '100%',
@@ -63,7 +65,7 @@ export default {
 				tooltip: false,
 				piecewise: false,
 				class: 'vrm-slider',
-				value: [0, max]
+				value: [start, end]
 			},
 			expanded: true
 		}
@@ -81,14 +83,14 @@ export default {
 			}
 		},
 		minSelected () {
-			var value = this.filter.options[this.slider.value[0]]
+			const value = this.filter.options[this.slider.value[0]]
 			if (this.filter.locale) {
 				return normalizeNumber(value)
 			}
 			return value
 		},
 		maxSelected () {
-			var value = this.filter.options[this.slider.value[1]]
+			const value = this.filter.options[this.slider.value[1]]
 			if (this.filter.locale) {
 				return normalizeNumber(value)
 			}
@@ -96,6 +98,10 @@ export default {
 		}
 	},
 	methods: {
+		getRangeKey (value) {
+			const key = Object.keys(this.filter.options).find(key => this.filter.options[key] === value)
+			return parseInt(key)
+		},
 		collapse () {
 			this.expanded = !this.expanded
 		},
@@ -106,16 +112,16 @@ export default {
 			return 'filter-' + this.filter.key + '-' + option
 		},
 		format (evt) {
-			var elm = evt.target || evt.srcElement
-			var value = this.parseNumber(elm.value)
+			const elm = evt.target || evt.srcElement
+			const value = this.parseNumber(elm.value)
 			// get closest value
-			var closest = this.filter.options.reduce((prev, curr) => {
+			const closest = this.filter.options.reduce((prev, curr) => {
 				return (Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev)
 			})
 			// get the key of the closest
-			var key = parseInt(Object.keys(this.filter.options).find(key => this.filter.options[key] === closest))
+			const key = this.getRangeKey(closest)
 			// get the current value from the slider component
-			var currentValue = this.$refs.slider.getValue()
+			const currentValue = this.$refs.slider.getValue()
 
 			// first fix the formatting
 			if (this.filter.locale) {
@@ -140,18 +146,18 @@ export default {
 			}
 		},
 		reformat (evt) {
-			var elm = evt.target || evt.srcElement
+			const elm = evt.target || evt.srcElement
 			elm.value = this.parseNumber(elm.value)
 		},
 		updateFilter () {
 			this.$store.dispatch('filters/updateFilter', [{
-				key: this.filter.key + '[from]',
-				value: this.slider.value[0],
-				updateHistory: true
+				key: this.filter.key,
+				range: 'from',
+				value: this.filter.options[this.slider.value[0]]
 			}, {
-				key: this.filter.key + '[to]',
-				value: this.slider.value[1],
-				updateHistory: true
+				key: this.filter.key,
+				range: 'to',
+				value: this.filter.options[this.slider.value[1]]
 			}])
 		},
 		parseNumber (n) {
