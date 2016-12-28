@@ -53,10 +53,32 @@ const filters = {
 	mutations: {
 		[types.ADD_FILTER] (state, filter) {
 			state.activeFilters.push(filter)
+
 			if (filter.range) {
 				state.filters[filter.key][filter.range].active.push(filter.value)
 			} else {
 				state.filters[filter.key].active.push(filter.value)
+			}
+		},
+		[types.UPDATE_FILTER] (state, payload) {
+			state.activeFilters.splice(payload.index, 1, payload.filter)
+
+			if (payload.filter.range) {
+				state.filters[payload.filter.key][payload.filter.range].active.splice(0, 1).push(payload.filter.value)
+			}
+		},
+		[types.REMOVE_FILTER] (state, payload) {
+			state.activeFilters.splice(payload.index, 1)
+
+			if (payload.filter.range) {
+				state.filters[payload.filter.key][payload.filter.range].active.splice(0, 1)
+			} else {
+				const index = state.filters[payload.filter.key].active.findIndex(active => {
+					return (active === payload.filter.value)
+				})
+				if (~index) {
+					state.filters[payload.filter.key].active.splice(index, 1)
+				}
 			}
 		}
 	},

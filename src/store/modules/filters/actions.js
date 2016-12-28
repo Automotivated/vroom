@@ -4,6 +4,7 @@
 
 import * as types from '../../types'
 import { updateHistory } from '../../../filters/history'
+import { findActiveFilterIndex } from '../../../filters/util'
 
 /**
  * addFilter
@@ -21,42 +22,43 @@ export const addFilter = ({ commit, state, rootState }, payload) => {
 /**
  * removeFilter
  */
-export const removeFilter = ({ commit, state }, payload) => {
-	// if (typeof payload.value !== 'undefined') {
-	// 	commit(types.REMOVE_FILTER, {
-	// 		key: payload.key
-	// 	})
-	// } else {
-	// 	commit(types.REMOVE_FILTER, {
-	// 		key: payload.key
-	// 	})
-	// }
+export const removeFilter = ({ commit, state, rootState }, payload) => {
+	payload.forEach(filter => {
+		const index = findActiveFilterIndex(filter, state.activeFilters)
+		if (~index) {
+			commit(types.REMOVE_FILTER, { index, filter })
+		}
+	})
+
+	// update the history
+	if (rootState.app.loaded) {
+		updateHistory(state)
+	}
 }
 /**
  * updateFilter
  */
-export const updateFilter = ({ commit, state }, payload) => {
-	// let historyRenewal = false
+export const updateFilter = ({ commit, state, rootState }, payload) => {
+	payload.forEach(filter => {
+		const index = findActiveFilterIndex(filter, state.activeFilters)
+		const options = state.filters[filter.key].options
+		const ignore = (
+			(filter.range === 'from' && options[0] === filter.value) ||
+			(filter.range === 'to' && options[options.length - 1] === filter.value)
+		)
 
-	// payload.forEach(filter => {
-	// 	commit(types.ADD_FILTER, {
-	// 		key: filter.key,
-	// 		value: filter.value
-	// 	})
-	// 	if (!historyRenewal && filter.updateHistory) {
-	// 		historyRenewal = !historyRenewal
-	// 	}
-	// })
-	// if (historyRenewal) {
-	// 	console.log('Update History: ' + historyRenewal)
-	// }
-	// if (typeof payload.value !== 'undefined') {
-	// 	commit(types.REMOVE_FILTER, {
-	// 		key: payload.key
-	// 	})
-	// } else {
-	// 	commit(types.REMOVE_FILTER, {
-	// 		key: payload.key
-	// 	})
-	// }
+		if (~index && ignore === true) {
+			commit(types.REMOVE_FILTER, { index, filter })
+		} else if (~index && ignore === false) {
+			commit(types.UPDATE_FILTER, { index, filter })
+		} else if (ignore === false) {
+			commit(types.ADD_FILTER, filter)
+		}
+	})
+
+	// update the history
+	if (rootState.app.loaded) {
+		updateHistory(state)
+	}
 }
+

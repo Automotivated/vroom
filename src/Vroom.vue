@@ -45,7 +45,17 @@ export default {
 	},
 	created () {
 		// Update the active filters with active query params
-		this.$store.dispatch('filters/addFilter', this.getHistory(), false)
+		this.$store.dispatch('filters/addFilter', this.getHistory())
+
+		// Add the initial window state
+		if (window.history.pushState) {
+			// bind popstate event listener for history events
+			window.addEventListener('popstate', (evt) => {
+				if (evt.state) {
+					console.log('do something smart here')
+				}
+			}, false)
+		}
 	},
 	mounted () {
 		// vue is mounted, so we're finished loading all offline contents

@@ -60,34 +60,43 @@ function getRealValue (value) {
  */
 function updateHistory (state) {
 	if (window.history.pushState) {
-		console.log('todo')
-		// let locationState = '?'
-		// // loop over the active filters for state updates
-		// state.activeFilters.forEach((active, index) => {
-		// 	locationState += active.key
-		// 	locationState += (state.filters.active.key] && state.filters[active.key].type === 'multi')
-		// 		? '[]='
-		// 		: '='
-		// 	locationState += active.value + '&'
-		// })
-		// // fix the & at the end
-		// locationState = (locationState.length > 1)
-		// 	? locationState.slice(0, -1)
-		// 	: locationState
+		let locationState = '?'
 
-		// // create a unique title
-		// let title = document.title
-		// title += locationState
-		// 	.replace(multiRegex, '')
-		// 	.replace(/=/g, ':')
-		// 	.replace(/&/g, ', ')
+		// loop over the active filters for state updates
+		state.activeFilters.forEach(filter => {
+			locationState += filter.key
+			switch (state.filters[filter.key].type) {
+			case 'multiple':
+				locationState += '[]='
+				break
+			case 'range':
+				locationState += '[' + filter.range + ']='
+				break
+			default:
+				locationState += '='
+				break
+			}
+			locationState += filter.value + '&'
+		})
 
-		// // push it! push it real good
-		// window.history.pushState(
-		// 	state.filters.activeFilters,
-		// 	title,
-		// 	locationState
-		// )
+		// fix the & at the end
+		locationState = (locationState.length > 1)
+			? locationState.slice(0, -1)
+			: locationState
+
+		// create a unique title
+		let title = document.title
+		title += locationState
+			.replace(rangeRegex, '')
+			.replace(/=/g, ':')
+			.replace(/&/g, ', ')
+
+		// push it! push it real good
+		window.history.pushState(
+			state.activeFilters,
+			title,
+			locationState
+		)
 	}
 }
 

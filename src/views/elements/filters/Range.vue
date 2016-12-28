@@ -12,7 +12,8 @@
 						:id="getUniqueId('from')"
 						:value="minSelected"
 						@focus="reformat"
-						@blur="format">
+						@blur="format"
+						@keyup.enter="blur">
 				</span>
 				<span class="vrm-range-seperator">-</span>
 				<span class="vrm-range-input">
@@ -23,7 +24,8 @@
 						:id="getUniqueId('to')"
 						:value="maxSelected"
 						@focus="reformat"
-						@blur="format">
+						@blur="format"
+						@keyup.enter="blur">
 				</span>
 			</div>
 		</div>
@@ -111,6 +113,10 @@ export default {
 				: option.toString()
 			return 'filter-' + this.filter.key + '-' + option
 		},
+		blur (evt) {
+			const elm = evt.target || evt.srcElement
+			elm.blur()
+		},
 		format (evt) {
 			const elm = evt.target || evt.srcElement
 			const value = this.parseNumber(elm.value)
@@ -144,6 +150,7 @@ export default {
 			} else if (elm.dataset.range === 'to') {
 				Vue.set(this.slider, 'value', [currentValue[0], currentValue[0]])
 			}
+			this.updateFilter()
 		},
 		reformat (evt) {
 			const elm = evt.target || evt.srcElement

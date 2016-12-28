@@ -6,6 +6,8 @@
 /**
  * inArray
  * Checks wheter the option (needle) exists in the active array (haystack)
+ *
+ * @return bool
  */
 function inArray (needle, haystack) {
 	const intComparison = /^[+-]?\d+$/.test(needle)
@@ -17,33 +19,23 @@ function inArray (needle, haystack) {
 	return false
 }
 
-// /**
-//  * getActiveFilterkey
-//  *
-//  * searches in the haystack for a match
-//  * if found return the index of the filter
-//  * otherwise return false
-//  */
-// function getActiveFilterKey (filter, haystack, matching) {
-// 	let isActiveFilter = false
-
-// 	if (filter.key !== undefined) {
-// 		// check if the provided filter is already present in the activeFilters
-// 		for (let i = 0, l = haystack.length; i < l; i++) {
-// 			if (haystack[i].key === filter.key) {
-// 				if (matching === true && filter.value !== undefined && haystack[i].value === filter.value) {
-// 					isActiveFilter = i
-// 					break
-// 				} else if (matching === false) {
-// 					isActiveFilter = i
-// 					break
-// 				}
-// 			}
-// 		}
-// 	}
-// 	return isActiveFilter
-// }
+/**
+ * findActiveFilterIndex
+ *
+ * Searches in the haystack for a match
+ *
+ * @return int
+ */
+function findActiveFilterIndex (filter, haystack) {
+	return haystack.findIndex((active, index) => {
+		return (active.key === filter.key &&
+			(filter.range !== undefined && filter.range === active.range) ||
+			(active.value === filter.value)
+		)
+	})
+}
 
 export {
-	inArray
+	inArray,
+	findActiveFilterIndex
 }
