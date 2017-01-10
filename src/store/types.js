@@ -3,7 +3,7 @@
  * All modules can react on these mutation types
  */
 
-export const FINISHED_INIT = 'FINISHED_INIT'
+export const TOGGLE_HISTORY = 'TOGGLE_HISTORY'
 export const TOGGLE_LOADING = 'TOGGLE_LOADING'
 export const ADD_DELAY = 'ADD_DELAY'
 export const UPDATE_OPTIONS = 'UPDATE_OPTIONS'

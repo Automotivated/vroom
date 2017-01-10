@@ -23,11 +23,12 @@ export default {
 			loading: false,
 			delays: [800]
 		},
-		loaded: false
+		updateHistory: false
 	},
 	mutations: {
-		[types.FINISHED_INIT] (state) {
-			Vue.set(state, 'loaded', true)
+		// Update history updates
+		[types.TOGGLE_HISTORY] (state) {
+			Vue.set(state, 'updateHistory', !state.updateHistory)
 		},
 		// Update loading state
 		[types.TOGGLE_LOADING] (state) {

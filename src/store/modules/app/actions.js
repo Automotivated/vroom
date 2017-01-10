@@ -5,10 +5,10 @@
 import * as types from '../../types'
 
 /**
- * finishedInit
+ * toggleHistory
  */
-export const finishedInit = ({ commit, state }) => {
-	commit(types.FINISHED_INIT)
+export const toggleHistory = ({ commit, state }) => {
+	commit(types.TOGGLE_HISTORY)
 }
 /**
  * updateOptions

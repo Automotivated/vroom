@@ -149,7 +149,10 @@ export default {
 				Vue.set(this.slider, 'value', [currentValue[0], key])
 			} else if (elm.dataset.range === 'to') {
 				Vue.set(this.slider, 'value', [currentValue[0], currentValue[0]])
+			} else {
+				return null
 			}
+			// call to the real update filter function
 			this.updateFilter()
 		},
 		reformat (evt) {

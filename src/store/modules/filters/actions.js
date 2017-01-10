@@ -15,7 +15,7 @@ export const addFilter = ({ commit, state, rootState }, payload) => {
 	})
 
 	// update the history
-	if (rootState.app.loaded) {
+	if (rootState.app.updateHistory) {
 		updateHistory(state)
 	}
 }
@@ -31,7 +31,7 @@ export const removeFilter = ({ commit, state, rootState }, payload) => {
 	})
 
 	// update the history
-	if (rootState.app.loaded) {
+	if (rootState.app.updateHistory) {
 		updateHistory(state)
 	}
 }
@@ -57,7 +57,7 @@ export const updateFilter = ({ commit, state, rootState }, payload) => {
 	})
 
 	// update the history
-	if (rootState.app.loaded) {
+	if (rootState.app.updateHistory) {
 		updateHistory(state)
 	}
 }

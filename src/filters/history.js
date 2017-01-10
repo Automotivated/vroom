@@ -19,6 +19,9 @@ function getHistory () {
 		var str = window.location.search.substring(1)
 		var parts = str.split('&')
 		parts.forEach(filter => {
+			if (filter === '') {
+				return
+			}
 			const range = filter.match(rangeRegex)
 			// range
 			if (range) {
@@ -42,7 +45,7 @@ function getHistory () {
 }
 
 /**
- * getValue
+ * getRealValue
  *
  * Helper function to return an string or int
  */
