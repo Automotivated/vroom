@@ -41,10 +41,6 @@ import Vue from 'vue'
 import vueSlider from 'vue-slider-component'
 import { normalizeNumber } from '../../../filters/format'
 
-/**
- * todo: on focus, strip formatting
- * label on the left (euro sign or something...)
- */
 export default {
 	name: 'Range',
 	props: ['filter'],
@@ -52,11 +48,17 @@ export default {
 		vueSlider
 	},
 	data () {
-		const max = this.filter.options.length - 1
-		const start = this.getRangeKey(this.filter.from.active[0]) || 0
-		const end = this.getRangeKey(this.filter.to.active[0]) || max
 		return {
-			slider: {
+			expanded: true
+		}
+	},
+	computed: {
+		slider () {
+			const max = this.filter.options.length - 1
+			const start = this.getRangeKey(this.filter.from.active[0]) || 0
+			const end = this.getRangeKey(this.filter.to.active[0]) || max
+
+			return {
 				width: '100%',
 				lazy: true,
 				height: 4,
@@ -68,11 +70,8 @@ export default {
 				piecewise: false,
 				class: 'vrm-slider',
 				value: [start, end]
-			},
-			expanded: true
-		}
-	},
-	computed: {
+			}
+		},
 		inputLabel () {
 			if (this.filter.locale && this.filter.locale === 'currency') {
 				switch (Vue.i18n.translate('filters.global.currency')) {
@@ -115,7 +114,17 @@ export default {
 		},
 		blur (evt) {
 			const elm = evt.target || evt.srcElement
-			elm.blur()
+			const type = 'blur'
+			let event
+			// trigger blur event
+			if (document.createEvent) {
+				// eslint-disable-next-line no-undef
+				event = new Event(type)
+				elm.dispatchEvent(event)
+			} else {
+				event = document.createEventObject()
+				elm.fireEvent('on' + type, event)
+			}
 		},
 		format (evt) {
 			const elm = evt.target || evt.srcElement
@@ -159,15 +168,19 @@ export default {
 			const elm = evt.target || evt.srcElement
 			elm.value = this.parseNumber(elm.value)
 		},
-		updateFilter () {
+		updateFilter (ref) {
+			let currentValue = this.slider.value
+			if (ref) {
+				currentValue = this.$refs.slider.getValue()
+			}
 			this.$store.dispatch('filters/updateFilter', [{
 				key: this.filter.key,
 				range: 'from',
-				value: this.filter.options[this.slider.value[0]]
+				value: this.filter.options[currentValue[0]]
 			}, {
 				key: this.filter.key,
 				range: 'to',
-				value: this.filter.options[this.slider.value[1]]
+				value: this.filter.options[currentValue[1]]
 			}])
 		},
 		parseNumber (n) {

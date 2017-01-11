@@ -62,6 +62,8 @@
 						position: absolute;
 						cursor: pointer;
 						opacity: 0;
+						top: 0px;
+						left: -2px;
 					}
 					input:checked + span {
 						background: $primary;

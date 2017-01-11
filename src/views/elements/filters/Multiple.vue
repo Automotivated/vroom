@@ -2,7 +2,7 @@
 	<div class="vrm-filter__multiple" v-cloak>
 		<h5 @click="collapse">{{ $t(filter.label) }}</h5>
 		<ul>
-			<li v-for="option in visibleOptions">
+			<li v-for="option in visibleOptions" :key="option.value">
 				<label>
 					<input
 						type="checkbox"
@@ -17,6 +17,7 @@
 			</li>
 		</ul>
 		<a href="#" v-if="showMore" v-show="expanded" @click.prevent="toggle" v-html="toggleText"></a>
+		{{filter.active}}
 	</div>
 </template>
 
@@ -85,10 +86,13 @@ export default {
 			const action = elm.checked === false
 				? 'filters/removeFilter'
 				: 'filters/addFilter'
+			const value = /^[+-]?\d+$/.test(elm.value)
+				? parseInt(elm.value)
+				: elm.value
 
 			this.$store.dispatch(action, [{
 				key: elm.name,
-				value: elm.value
+				value: value
 			}])
 		}
 	}

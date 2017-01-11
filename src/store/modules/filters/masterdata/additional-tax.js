@@ -16,7 +16,7 @@ export const additionalTax = {
 		total: 0
 	}, {
 		label: '14%',
-		value: '0%',
+		value: 14,
 		total: 0
 	}, {
 		label: '20%',

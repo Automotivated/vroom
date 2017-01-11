@@ -62,16 +62,19 @@ const filters = {
 		},
 		[types.UPDATE_FILTER] (state, payload) {
 			state.activeFilters.splice(payload.index, 1, payload.filter)
-
 			if (payload.filter.range) {
-				state.filters[payload.filter.key][payload.filter.range].active.splice(0, 1).push(payload.filter.value)
+				let active = state.filters[payload.filter.key][payload.filter.range].active
+				// empty current actives
+				active.splice(0)
+				// push the new active
+				active.push(payload.filter.value)
 			}
 		},
 		[types.REMOVE_FILTER] (state, payload) {
 			state.activeFilters.splice(payload.index, 1)
 
 			if (payload.filter.range) {
-				state.filters[payload.filter.key][payload.filter.range].active.splice(0, 1)
+				state.filters[payload.filter.key][payload.filter.range].active.splice(0)
 			} else {
 				const index = state.filters[payload.filter.key].active.findIndex(active => {
 					return (active === payload.filter.value)

@@ -83,6 +83,9 @@ export default {
 						var index = findActiveFilterIndex(item, this.activeFilters)
 						if (!~index) {
 							this.$store.dispatch('filters/addFilter', [item])
+						// check for ranged filters
+						} else if (item.range && this.activeFilters[index].value !== item.value) {
+							this.$store.dispatch('filters/updateFilter', [item])
 						}
 					})
 					// loop over active filters to remove state filter
