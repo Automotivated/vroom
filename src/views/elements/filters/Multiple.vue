@@ -12,12 +12,18 @@
 						@change="updateFilter">
 					<span></span>
 					{{ $t(option.label) }}
+					<font style="color:red;font-size:0.8em;">
+						({{ inArray(option.value, filter.active) }})
+					</font>
 				</label>
 				<span v-text="option.total"></span>
 			</li>
 		</ul>
 		<a href="#" v-if="showMore" v-show="expanded" @click.prevent="toggle" v-html="toggleText"></a>
-		{{filter.active}}
+		Current in active filter:<br>
+		<font style="color:red;font-size:0.8em;">
+			{{ filter.active }}
+		</font>
 	</div>
 </template>
 
