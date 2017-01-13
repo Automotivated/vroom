@@ -25,8 +25,24 @@
 
 		> :first-child {
 			h5 {
+				position: relative;
 				margin: 0;
 				cursor: pointer;
+
+				> i {
+					float: right;
+					margin-right: 0.25em;
+
+					> svg {
+						width: 1em;
+						height: 1em;
+						position: absolute;
+						top: 50%;
+						bottom: 50%;
+						transform: translate(-50%, -50%);
+						fill: $textual-grey;
+					}
+				}
 			}
 		}
 	}

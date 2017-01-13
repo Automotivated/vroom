@@ -43,6 +43,7 @@
 						width: 1em;
 						height: 1em;
 						background: $element-grey;
+						transition: background .1s ease .1s;
 						-webkit-backface-visibility: hidden;
 
 						&::after {
@@ -67,6 +68,7 @@
 					}
 					input:checked + span {
 						background: $primary;
+						transition: background .2s;
 					}
 					input:checked + span::after {
 						transform: scale(1);
