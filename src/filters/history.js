@@ -69,14 +69,15 @@ function updateHistory (state) {
 		state.activeFilters.forEach(filter => {
 			locationState += filter.key
 			switch (state.filters[filter.key].type) {
-			case 'multiple':
-				locationState += '[]='
+			case 'search':
+				locationState += '='
 				break
 			case 'range':
 				locationState += '[' + filter.range + ']='
 				break
+			case 'multiple':
 			default:
-				locationState += '='
+				locationState += '[]='
 				break
 			}
 			locationState += filter.value + '&'

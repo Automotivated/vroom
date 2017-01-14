@@ -1,0 +1,83 @@
+/*
+ * Component - Multiple
+ */
+
+@import 'settings/globals';
+
+.vrm-filter {
+	&__energylabel {
+		ul {
+			li {
+				.vrm-energylabel {
+					// border-top-left-radius: 2px;
+					// border-bottom-left-radius: 2px;
+					display: inline-block;
+					width: 3em;
+					background: $element-grey;
+					font-weight: 500;
+					color: $white;
+					padding: 0 0 0 0.5em;
+					position: relative;
+					line-height: 2rem;
+
+					&::after {
+						left: 100%;
+						top: 50%;
+						border: solid transparent;
+						content: " ";
+						height: 0;
+						width: 0;
+						position: absolute;
+						pointer-events: none;
+						border-left-color: $element-grey;
+						border-width: 1rem;
+						margin-top: -1rem;
+					}
+
+					&__a {
+						background: #1d9a3c;
+						&::after {
+							border-left-color: #1d9a3c;
+						}
+					}
+					&__b {
+						background: #5aa82d;
+						&::after {
+							border-left-color: #5aa82d;
+						}
+					}
+					&__c {
+						background: #c7d209;
+						&::after {
+							border-left-color: #c7d209;
+						}
+					}
+					&__d {
+						background: #f8ec0c;
+						&::after {
+							border-left-color: #f8ec0c;
+						}
+					}
+					&__e {
+						background: #faba03;
+						&::after {
+							border-left-color: #faba03;
+						}
+					}
+					&__f {
+						background: #ec6b09;
+						&::after {
+							border-left-color: #ec6b09;
+						}
+					}
+					&__g {
+						background: #e1051f;
+						&::after {
+							border-left-color: #e1051f;
+						}
+					}
+				}
+			}
+		}
+	}
+}
