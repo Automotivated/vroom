@@ -3,7 +3,15 @@
 		<h5 @click="collapse">{{ $t(filter.label) }}</h5>
 		<ul>
 			<li v-for="option in filter.options" :key="option.value">
-				{{ option }}
+				<label :title="$t(option.label)">
+					<input
+						type="checkbox"
+						:name="filter.key"
+						:value="option.value"
+						:checked="inArray(option.value, filter.active)"
+						@change="updateFilter">
+					<span :class="className(option.value)"></span>
+				</label>
 			</li>
 		</ul>
 	</div>
@@ -28,6 +36,20 @@ export default {
 		inArray,
 		collapse () {
 			this.expanded = !this.expanded
+		},
+		className (val) {
+			return 'vrm-color__' + val.toLowerCase()
+		},
+		updateFilter (evt) {
+			const elm = evt.target || evt.srcElement
+			const action = elm.checked === false
+				? 'filters/removeFilter'
+				: 'filters/addFilter'
+
+			this.$store.dispatch(action, [{
+				key: elm.name,
+				value: elm.value
+			}])
 		}
 	}
 }

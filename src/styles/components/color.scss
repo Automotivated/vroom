@@ -8,13 +8,129 @@
 	&__color {
 		ul {
 			list-style: none;
+			padding: 0.4em 0 0 0;
 			margin: 0;
-			padding: 0;
 			-webkit-margin-before: 0;
 			-webkit-margin-after: 0;
 
 			li {
+				display: inline-block;
+				margin: 0 0.4em 0.4em 0;
+				width: 2em;
+				height: 2em;
 
+				> label {
+					margin: 0;
+					display: block;
+					height: 100%;
+					position: relative;
+					cursor: pointer;
+
+					&::selection {
+						background: transparent;
+					}
+
+					&:hover input + span {
+						box-shadow: 0 0 2px 0 rgba($primary, 0.7);
+					}
+					input + span {
+						border-radius: 3px;
+						width: 100%;
+						height: 100%;
+						background: $element-grey;
+						display: inline-block;
+						content: "";
+						padding: 0;
+						vertical-align: middle;
+						-webkit-backface-visibility: hidden;
+
+						&::after {
+							content: '';
+							background-image: url("../../assets/checked.svg");
+							background-repeat: no-repeat;
+							width: 60%;
+							height: 60%;
+							margin: 20% 0 0 20%;
+							display: block;
+							transform: scale(0);
+							transition: transform .2s;
+						}
+					}
+					.vrm-color {
+						&__grey {
+							background: #bec3c7;
+						}
+						&__black {
+							background: #000000;
+						}
+						&__white {
+							background: #fdfdfd;
+							border: 1px solid $element-grey;
+
+							&::after {
+								background-image: url("../../assets/checked-grey.svg");
+							}
+						}
+						&__blue {
+							background: #5c8fc2;
+						}
+						&__silver {
+							background: #c0c0c0;
+						}
+						&__red {
+							background: #ee4747;
+						}
+						&__beige {
+							background: #f5f1de;
+							border: 1px solid $element-grey;
+
+							&::after {
+								background-image: url("../../assets/checked-grey.svg");
+							}
+						}
+						&__brown {
+							background: #4e2e28;
+						}
+						&__yellow {
+							background: #ebc94a;
+						}
+						&__purple {
+							background: #a863bf;
+						}
+						&__green {
+							background: #4cb88e;
+						}
+						&__orange {
+							background: #ff6600;
+						}
+						&__cream {
+							background: #fcfbe3;
+							border: 1px solid $element-grey;
+
+							&::after {
+								background-image: url("../../assets/checked-grey.svg");
+							}
+						}
+						&__remaining {
+							background: #ffffff;
+							border: 1px solid $element-grey;
+
+							&::after {
+								background-image: url("../../assets/checked-grey.svg");
+							}
+						}
+					}
+					input {
+						position: absolute;
+						cursor: pointer;
+						opacity: 0;
+						top: 0px;
+						left: -2px;
+					}
+					input:checked + span::after {
+						transform: scale(1);
+					}
+				}
 			}
 		}
 	}
