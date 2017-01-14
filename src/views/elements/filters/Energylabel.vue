@@ -3,7 +3,7 @@
 		<h5 @click="collapse">{{ $t(filter.label) }}</h5>
 		<ul>
 			<li v-for="option in filter.options" :key="option.value">
-				<label>
+				<label :title="$t(option.label)">
 					<input
 						type="checkbox"
 						:name="filter.key"
