@@ -2,6 +2,7 @@ import 'babel-polyfill'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import results from 'src/store/modules/results/results'
+import * as types from 'src/store/types'
 
 Vue.use(Vuex)
 
@@ -13,7 +14,18 @@ describe('Results store', () => {
 		vm = new Vue({
 			store: new Vuex.Store({
 				modules: {
-					results
+					results: results,
+					app: {
+						namespaced: true,
+						mutations: {
+							[types.TOGGLE_LOADING] (state) {
+								return true
+							},
+							[types.ADD_DELAY] (state, value) {
+								return value
+							}
+						}
+					}
 				}
 			})
 		})
@@ -22,10 +34,6 @@ describe('Results store', () => {
 	describe('results should be null when created', () => {
 		it('results should be default null', () => {
 			expect(vm.$store.getters['results/results']).to.equal(null)
-		})
-		it('should update when triggered', () => {
-			vm.$store.dispatch('results/getData')
-			expect(vm.$store.getters['results/results']).to.be.an('object')
 		})
 	})
 })

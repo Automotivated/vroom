@@ -31,8 +31,11 @@ export default {
 			Vue.set(state, 'updateHistory', !state.updateHistory)
 		},
 		// Update loading state
-		[types.TOGGLE_LOADING] (state) {
-			Vue.set(state.loader, 'loading', !state.loader.loading)
+		[types.TOGGLE_LOADING] (state, newState) {
+			Vue.set(state.loader, 'loading', (typeof (newState) === 'boolean')
+				? newState
+				: !state.loader.loading
+			)
 		},
 		// Adds a delay to the stack with a maximum of 10
 		[types.ADD_DELAY] (state, delay) {

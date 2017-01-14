@@ -39,11 +39,13 @@ export default {
 	},
 	data () {
 		return {
+			debouncedUpdate: null,
 			error: {}
 		}
 	},
 	computed: {
 		...mapGetters({
+			options: 'app/options',
 			activeFilters: 'filters/filteredActiveFilters'
 		})
 	},
@@ -53,7 +55,12 @@ export default {
 	},
 	created () {
 		// Update the active filters with active query params
-		this.$store.dispatch('filters/addFilter', this.getHistory())
+		const currentHistory = this.getHistory()
+		if (currentHistory.length > 0) {
+			this.$store.dispatch('filters/addFilter', this.getHistory())
+		} else {
+			this.$store.dispatch('results/getData')
+		}
 
 		// Check if we can manipulate the window address bar state
 		if (window.history.pushState) {
@@ -106,7 +113,19 @@ export default {
 		this.$store.dispatch('app/toggleHistory')
 	},
 	watch: {
-
+		/**
+		 * Watch the activeFilter object for changes and do a debounced update
+		 * If the debounce is a bit weird or out of balance, adjust it in the options
+		 */
+		'activeFilters' () {
+			if (typeof this.debouncedUpdate === 'number') {
+				window.clearTimeout(this.debouncedUpdate)
+				this.debouncedUpdate = null
+			}
+			this.debouncedUpdate = window.setTimeout(() => {
+				this.$store.dispatch('results/getData')
+			}, this.options.debounce)
+		}
 	}
 }
 </script>

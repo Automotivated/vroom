@@ -19,14 +19,13 @@ describe('Topbar.vue', () => {
 						namespaced: true,
 						getters: {
 							filteredActiveFilters: () => {
-								return []
+								return [{}]
 							}
 						}
 					}
 				}
 			})
 		})
-		expect(vm.$el.querySelector('header h1').textContent)
-			.to.equal('Booo!')
+		expect(vm.$el.querySelector('.vrm-active').childNodes.length).to.equal(1)
 	})
 })

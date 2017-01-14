@@ -155,14 +155,14 @@ Because we rebooted the project, this list will grow and grow before release. Th
 - [ ] Get a design from Dezzign
 - [ ] Get test coverage as high as necessary
 - [x] Internationalization
-- [ ] History state
+- [x] History state
 - [ ] Add an API [Automotivated.engine( )](https://github.com/Automotivated/engine)
-- [ ] Create a store module for the app
+- [x] Create a store module for the app
   - [x] options
   - [x] api
-  - [ ] global app states
+  - [x] global app states
 - [ ] Create a store module for the filters
-  - [ ] Masterdata
+  - [x] Masterdata
   - [ ] Active filters
   - [ ] Reset filters
   - [ ] Parsing
@@ -176,13 +176,13 @@ Because we rebooted the project, this list will grow and grow before release. Th
 -[ ] Components
 	- [ ] Active filters
 	- [ ] Filters
-	  - [ ] Search filter
-	  - [ ] Multi filter
+	  - [x] Search filter
+	  - [x] Multi filter
 	  - [ ] Multi-search filter
-	  - [ ] Range filter
-	  - [ ] Energylabel filter
-	  - [ ] Color filter
-	- [ ] Loading
+	  - [x] Range filter
+	  - [x] Energylabel filter
+	  - [x] Color filter
+	- [x] Loading
 	- [ ] Modal
 		- [ ] Error notifications
 	- [ ] Pagination

@@ -96,17 +96,17 @@ describe('App store', () => {
 		// THIS SHOULD WORK....
 		// it('should update loading', done => {
 		// 	var loading = vm.$store.getters['app/loading']
-		// 	expect(loading).to.equal(false)
-		// 	vm.$store.dispatch('app/setLoading', true)
+		// 	expect(loading).to.equal(true)
+		// 	vm.$store.dispatch('app/toggleLoading')
 		// 	Vue.nextTick(() => {
-		// 		expect(loading).to.equal(true)
+		// 		expect(loading).to.equal(false)
 		// 		done()
 		// 	})
 		// })
 		it('should update loading', () => {
-			expect(vm.$store.getters['app/loading']).to.equal(false)
-			vm.$store.dispatch('app/toggleLoading')
 			expect(vm.$store.getters['app/loading']).to.equal(true)
+			vm.$store.dispatch('app/toggleLoading')
+			expect(vm.$store.getters['app/loading']).to.equal(false)
 		})
 	})
 })
