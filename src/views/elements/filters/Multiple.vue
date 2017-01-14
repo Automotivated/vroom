@@ -1,6 +1,9 @@
 <template>
 	<div class="vrm-filter__multiple" v-cloak>
-		<h5 @click="collapse">{{ $t(filter.label) }}</h5>
+		<h5 @click="collapse">
+			{{ $t(filter.label) }}
+			<i v-svg:chevron class="vrm-chevron-bottom"></i>
+		</h5>
 		<ul>
 			<li v-for="option in visibleOptions" :key="option.value">
 				<label :title="$t(option.label)">

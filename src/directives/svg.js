@@ -9,12 +9,12 @@ import Vue from 'vue'
 // import svg's
 import glass from '../assets/svg/glass.svg'
 import checked from '../assets/svg/checked.svg'
-import chevronRight from '../assets/svg/chevron-right.svg'
+import chevron from '../assets/svg/chevron.svg'
 
 const sprite = {
 	'checked': checked,
 	'glass': glass,
-	'chevron-right': chevronRight
+	'chevron': chevron
 }
 
 // Register a global custom directive called v-svg
