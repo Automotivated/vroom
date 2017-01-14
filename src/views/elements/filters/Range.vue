@@ -39,18 +39,15 @@ import 'components/range'
 // import scripts
 import Vue from 'vue'
 import vueSlider from 'vue-slider-component'
+import filter from './filter'
 import { normalizeNumber } from '../../../filters/format'
 
 export default {
 	name: 'Range',
 	props: ['filter'],
+	mixins: [filter],
 	components: {
 		vueSlider
-	},
-	data () {
-		return {
-			expanded: true
-		}
 	},
 	computed: {
 		slider () {
@@ -102,9 +99,6 @@ export default {
 		getRangeKey (value) {
 			const key = Object.keys(this.filter.options).find(key => this.filter.options[key] === value)
 			return parseInt(key)
-		},
-		collapse () {
-			this.expanded = !this.expanded
 		},
 		getUniqueId (option) {
 			option = (typeof option === 'string')

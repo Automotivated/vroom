@@ -2,7 +2,7 @@
 	<div class="vrm-filter__multiple vrm-filter__energylabel" v-cloak>
 		<h5 @click="collapse">{{ $t(filter.label) }}</h5>
 		<ul>
-			<li v-for="option in filter.options" :key="option.value">
+			<li v-for="option in visibleOptions" :key="option.value">
 				<label :title="$t(option.label)">
 					<input
 						type="checkbox"
@@ -18,6 +18,7 @@
 				<span v-text="option.total"></span>
 			</li>
 		</ul>
+		<a href="#" v-if="showMore" v-show="expanded" @click.prevent="toggle" v-html="toggleText"></a>
 	</div>
 </template>
 
@@ -26,34 +27,15 @@
 import 'components/energylabel'
 
 // import scripts
-import { inArray } from '../../../filters/util'
+import filter from './filter'
 
 export default {
 	name: 'Energylabel',
 	props: ['filter'],
-	data () {
-		return {
-			expanded: true
-		}
-	},
+	mixins: [filter],
 	methods: {
-		inArray,
-		collapse () {
-			this.expanded = !this.expanded
-		},
 		className (val) {
 			return 'vrm-energylabel__' + val.toLowerCase()
-		},
-		updateFilter (evt) {
-			const elm = evt.target || evt.srcElement
-			const action = elm.checked === false
-				? 'filters/removeFilter'
-				: 'filters/addFilter'
-
-			this.$store.dispatch(action, [{
-				key: elm.name,
-				value: elm.value
-			}])
 		}
 	}
 }

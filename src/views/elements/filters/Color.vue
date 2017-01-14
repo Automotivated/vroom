@@ -2,7 +2,7 @@
 	<div class="vrm-filter__color" v-cloak>
 		<h5 @click="collapse">{{ $t(filter.label) }}</h5>
 		<ul>
-			<li v-for="option in filter.options" :key="option.value">
+			<li v-for="option in visibleOptions" :key="option.value">
 				<label :title="$t(option.label)">
 					<input
 						type="checkbox"
@@ -22,34 +22,20 @@
 import 'components/color'
 
 // import scripts
-import { inArray } from '../../../filters/util'
+import filter from './filter'
 
 export default {
 	name: 'Color',
 	props: ['filter'],
+	mixins: [filter],
 	data () {
 		return {
-			expanded: true
+			limited: false
 		}
 	},
 	methods: {
-		inArray,
-		collapse () {
-			this.expanded = !this.expanded
-		},
 		className (val) {
 			return 'vrm-color__' + val.toLowerCase()
-		},
-		updateFilter (evt) {
-			const elm = evt.target || evt.srcElement
-			const action = elm.checked === false
-				? 'filters/removeFilter'
-				: 'filters/addFilter'
-
-			this.$store.dispatch(action, [{
-				key: elm.name,
-				value: elm.value
-			}])
 		}
 	}
 }
