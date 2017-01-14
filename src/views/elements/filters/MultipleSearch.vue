@@ -1,8 +1,8 @@
 <template>
 	<div class="vrm-filter__multiple" v-cloak>
-		<h5>
+		<h5 @click="collapse">
 			{{ $t(filter.label) }}
-			<i v-svg:chevron class="vrm-chevron__right"></i>
+			<i v-svg:chevron class="vrm-chevron__right" :class="{'vrm-chevron-toggle': !expanded}"></i>
 		</h5>
 	</div>
 </template>
