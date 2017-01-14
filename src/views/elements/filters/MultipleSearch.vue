@@ -2,7 +2,7 @@
 	<div class="vrm-filter__multiple" v-cloak>
 		<h5>
 			{{ $t(filter.label) }}
-			<i v-svg:chevron class="vrm-chevron-right"></i>
+			<i v-svg:chevron class="vrm-chevron__right"></i>
 		</h5>
 	</div>
 </template>

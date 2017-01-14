@@ -1,6 +1,9 @@
 <template>
 	<div class="vrm-filter__range" v-cloak>
-		<h5 @click="collapse">{{ $t(filter.label) }}</h5>
+		<h5 @click="collapse">
+			{{ $t(filter.label) }}
+			<i v-svg:chevron class="vrm-chevron__top" :class="{'vrm-chevron-toggle': !expanded}"></i>
+		</h5>
 		<div v-if="expanded">
 			<vue-slider ref="slider" v-bind="slider" @drag-end="updateFilter"></vue-slider>
 			<div class="vrm-range">
