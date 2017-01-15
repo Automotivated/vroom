@@ -1,0 +1,60 @@
+/*
+ * Component - Active filters
+ */
+
+@import 'settings/globals';
+
+.vrm-active {
+	min-height: 2.5em;
+	display: flex;
+	width: 100%;
+	padding: 0;
+	font-size: 1.4rem;
+	flex-wrap: no-wrap;
+
+	.vrm-active-filters {
+		// max-width: 85%;
+		flex: 1 1 auto;
+		flex-flow: row wrap;
+		display: flex;
+
+		> div {
+			border-radius: 2px;
+			background-color: $mint;
+			color: $primary;
+			display: inline-block;
+			margin: 0 0.5em 0.5em 0;
+			padding: 0 1.5em 0 0.5em;
+			line-height: 2em;
+			position: relative;
+			vertical-align: middle;
+
+			> i {
+				width: 1em;
+				height: 1em;
+				position: absolute;
+				top: calc(50% - 0.5em);
+				right: 0.25em;
+				cursor: pointer;
+
+				> svg {
+					fill: $primary;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+				}
+			}
+		}
+	}
+	> a.vrm-clear-active {
+		flex: 1 1 auto;
+		text-align: right;
+		white-space: nowrap;
+		line-height: 2em;
+	}
+	> span {
+		font-weight: 200;
+		color: $slate-grey;
+		font-size: 0.9em;
+	}
+}

@@ -8,7 +8,7 @@
 			<vue-slider ref="slider" v-bind="slider" @drag-end="updateFilter"></vue-slider>
 			<div class="vrm-range">
 				<span class="vrm-range-input">
-					<label :for="getUniqueId('from')" v-html="inputLabel"></label>
+					<label :for="getUniqueId('from')" v-html="toLocale(filter.locale)"></label>
 					<input
 						type="text"
 						data-range="from"
@@ -20,7 +20,7 @@
 				</span>
 				<span class="vrm-range-seperator">-</span>
 				<span class="vrm-range-input">
-					<label :for="getUniqueId('to')" v-html="inputLabel"></label>
+					<label :for="getUniqueId('to')" v-html="toLocale(filter.locale)"></label>
 					<input
 						type="text"
 						data-range="to"
@@ -43,7 +43,7 @@ import 'components/range'
 import Vue from 'vue'
 import vueSlider from 'vue-slider-component'
 import filter from './filter'
-import { normalizeNumber } from '../../../filters/format'
+import { normalizeNumber, toLocale } from '../../../filters/format'
 
 export default {
 	name: 'Range',
@@ -72,33 +72,21 @@ export default {
 				value: [start, end]
 			}
 		},
-		inputLabel () {
-			if (this.filter.locale && this.filter.locale === 'currency') {
-				switch (Vue.i18n.translate('filters.global.currency')) {
-				case 'USD':
-					return '&#36;'
-				case 'EUR':
-				default:
-					return '&euro;'
-				}
-			}
-		},
 		minSelected () {
-			const value = this.filter.options[this.slider.value[0]]
-			if (this.filter.locale) {
-				return normalizeNumber(value)
-			}
-			return value
+			return this.getSelected(0)
 		},
 		maxSelected () {
-			const value = this.filter.options[this.slider.value[1]]
-			if (this.filter.locale) {
-				return normalizeNumber(value)
-			}
-			return value
+			return this.getSelected(1)
 		}
 	},
 	methods: {
+		toLocale,
+		getSelected (offset) {
+			const value = this.filter.options[this.slider.value[offset]]
+			return this.filter.locale
+				? normalizeNumber(value)
+				: value
+		},
 		getRangeKey (value) {
 			const key = Object.keys(this.filter.options).find(key => this.filter.options[key] === value)
 			return parseInt(key)

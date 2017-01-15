@@ -5,8 +5,7 @@
 @import 'settings/globals';
 
 .vrm-credits {
-	max-width: 100%;
-	flex: 1 1 100%;
+	min-width: 100%;
 	color: $slate-grey;
 	padding: 10px 0;
 	text-align: center;

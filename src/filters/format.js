@@ -4,6 +4,9 @@
  * They are needed in the app to transform objects or strings
  */
 
+// import scripts
+import Vue from 'vue'
+
 /**
  * fancyfy
  * Feeling fancy? Not fancy enough! Use fancyfy to make it even more fancy!!
@@ -27,6 +30,22 @@ function fancyfy (elm, suffix) {
 }
 
 /**
+ *
+ */
+function toLocale (locale) {
+	if (locale && locale === 'currency') {
+		switch (Vue.i18n.translate('filters.global.currency')) {
+		case 'USD':
+			return '&#36;'
+		case 'EUR':
+		default:
+			return '&euro;'
+		}
+	}
+	return null
+}
+
+/**
  * Filter to reformat numbers to add a dot when over a thousand
  * @param int number
  *
@@ -44,5 +63,6 @@ function normalizeNumber (n) {
 
 export {
 	fancyfy,
-	normalizeNumber
+	normalizeNumber,
+	toLocale
 }

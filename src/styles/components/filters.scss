@@ -28,14 +28,13 @@
 				position: relative;
 				margin: 0;
 				cursor: pointer;
-				vertical-align: middle;
 
 				> i {
 					position: absolute;
 					width: 1em;
 					height: 1em;
 					top: calc(50% - 0.5em);
-					right: calc(-0.25em);
+					right: -0.25em;
 					transition: transform 0.2s;
 
 					&.vrm-chevron {
