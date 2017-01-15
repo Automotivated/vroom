@@ -18,7 +18,7 @@ describe('Active.vue', () => {
 						state: {
 							filters: {
 								[body.key]: body
-							},
+							}
 						},
 						getters: {
 							filteredActiveFilters: () => {
