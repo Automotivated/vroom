@@ -4,3 +4,9 @@
 	flex-flow: column wrap;
 	padding: 0 10px;
 }
+
+@media screen and (max-width: 800px) {
+	.vrm-workspace {
+		max-width: 100%;
+	}
+}

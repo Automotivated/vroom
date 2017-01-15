@@ -13,7 +13,6 @@
 	flex-wrap: no-wrap;
 
 	.vrm-active-filters {
-		// max-width: 85%;
 		flex: 1 1 auto;
 		flex-flow: row wrap;
 		display: flex;
@@ -46,15 +45,31 @@
 			}
 		}
 	}
-	> a.vrm-clear-active {
+
+	.vrm-clear-active {
 		flex: 1 1 auto;
 		text-align: right;
 		white-space: nowrap;
 		line-height: 2em;
 	}
+
 	> span {
 		font-weight: 200;
 		color: $slate-grey;
 		font-size: 0.9em;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.vrm-active {
+		margin: 20px 0 0 0;
+		flex-flow: column wrap;
+
+		.vrm-clear-active {
+			display: block;
+			text-align: center;
+			white-space: nowrap;
+			line-height: 2em;
+		}
 	}
 }
