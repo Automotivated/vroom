@@ -10,7 +10,7 @@ export const translationsNl = {
 			locale: 'nl-NL',
 			currency: 'EUR',
 			clear_filters: 'Wis filters',
-			no_filters: 'Verfijn de resultaten door filters toe te voegen',
+			back_to_results: 'Terug naar overzicht',
 			more: 'Meer',
 			less: 'Minder'
 		},

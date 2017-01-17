@@ -6,8 +6,7 @@
 				<i v-svg:close @click="removeFilter(filter)"></i>
 			</div>
 		</div>
-		<a v-if="activeFilters.length > 0" class="vrm-clear-active" href="#" @click.prevent="clearFilters()">{{ $t('filters.global.clear_filters') }}</a>
-		<span v-else>{{ $t('filters.global.no_filters') }}
+		<a class="vrm-clear-active" :class="{'vrm-clear-active--disabled': (activeFilters.length === 0)}" href="#" @click.prevent="clearFilters()">{{ $t('filters.global.clear_filters') }}</a>
 	</div>
 </template>
 
@@ -19,7 +18,6 @@ import 'components/active'
 import Vue from 'vue'
 import { mapGetters } from 'vuex'
 import { normalizeNumber, toLocale } from '../filters/format'
-import '../directives/svg'
 
 export default {
 	name: 'Active',
@@ -33,7 +31,9 @@ export default {
 			this.$store.dispatch('filters/removeFilter', [filter])
 		},
 		clearFilters () {
-			this.$store.dispatch('filters/removeFilter', this.activeFilters.slice())
+			if (this.activeFilters.length > 0) {
+				this.$store.dispatch('filters/removeFilter', this.activeFilters.slice())
+			}
 		},
 		getLabel (filter) {
 			const masterFilter = this.$store.state.filters.filters[filter.key]

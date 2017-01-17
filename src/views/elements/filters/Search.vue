@@ -1,5 +1,5 @@
 <template>
-	<div class="vrm-filter__search">
+	<div class="vrm-filter__search" v-if="!isMobile">
 		<input type="text" :name="filter.key" :value="filter.active[0]" :placeholder="getPlaceholderText" id="trefwoord_searchfield">
 		<button type="button"><i v-svg:glass></i></button>
 	</div>
@@ -7,11 +7,11 @@
 
 <script>
 // import styles
-import Vue from 'vue'
 import 'components/search'
 
 // import scripts
-import '../../../directives/svg'
+import Vue from 'vue'
+import { isMobile } from '../../../filters/util'
 
 export default {
 	name: 'Search',
@@ -19,6 +19,9 @@ export default {
 	computed: {
 		getPlaceholderText () {
 			return Vue.i18n.translate(this.filter.label) + '…'
+		},
+		isMobile () {
+			return isMobile()
 		}
 	}
 }

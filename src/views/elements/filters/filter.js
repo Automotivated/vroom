@@ -8,7 +8,6 @@
 // import scripts
 import Vue from 'vue'
 import { inArray } from '../../../filters/util'
-import '../../../directives/svg'
 
 export default {
 	props: ['filter'],

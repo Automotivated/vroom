@@ -35,7 +35,40 @@ function findActiveFilterIndex (filter, haystack) {
 	})
 }
 
+/**
+ * isMobile
+ */
+function isMobile () {
+	const viewport = getViewport()
+	return (viewport.width <= 720 && isTouch())
+}
+
+/**
+ * getViewport
+ */
+function getViewport () {
+	let e = window
+	let a = 'inner'
+	if (!('innerWidth' in window)) {
+		a = 'client'
+		e = document.documentElement || document.body
+	}
+	return {
+		width: e[a + 'Width'],
+		height: e[a + 'Height']
+	}
+}
+
+/**
+ * isTouch
+ */
+function isTouch () {
+	// eslint-disable-next-line no-undef
+	return (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)
+}
+
 export {
+	isMobile,
 	inArray,
 	findActiveFilterIndex
 }

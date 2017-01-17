@@ -19,6 +19,7 @@ import 'vroom'
 import { mapGetters } from 'vuex'
 import { getHistory } from './filters/history'
 import { findActiveFilterIndex } from './filters/util'
+import './directives/svg'
 
 // import templates
 import Loader from './views/Loader'

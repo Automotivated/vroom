@@ -51,23 +51,26 @@
 		text-align: right;
 		white-space: nowrap;
 		line-height: 2em;
-	}
 
-	> span {
-		font-weight: 200;
-		color: $slate-grey;
-		font-size: 0.9em;
+		&--disabled {
+			color: $textual-grey;
+			cursor: default;
+			&:hover {
+				color: $textual-grey;
+			}
+		}
+
 	}
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 720px) {
 	.vrm-active {
 		margin: 20px 0 0 0;
 		flex-flow: column wrap;
 
 		.vrm-clear-active {
 			display: block;
-			text-align: center;
+			text-align: left;
 			white-space: nowrap;
 			line-height: 2em;
 		}

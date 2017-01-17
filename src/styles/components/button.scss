@@ -30,20 +30,6 @@
 	vertical-align: middle;
 	transition: background 900ms $easing;
 
-	&::before {
-		content: "";
-		position: absolute;
-		top: calc(50% - 300px);
-		left: calc(50% - 300px);
-		display: block;
-		width: 600px;
-		height: 600px;
-		border-radius: 50%;
-		background: lighten($white, 6%);
-		opacity: .2;
-		transform: scale(0);
-	}
-
 	i {
 		display: block;
 		min-width: 1em;
@@ -61,48 +47,41 @@
 		}
 	}
 
-	&:disabled { cursor: default; }
+	&:disabled {
+		cursor: default;
+	}
 
 	&:focus {
 		outline: none;
-
-		&::before {
-			opacity: 0;
-			transform: scale(1);
-			transition: all 3200ms $easing;
-		}
 	}
 
-	&:visited { color: $white; }
+	&:visited,
+	&:active {
+		color: $white;
+	}
 
 	&:hover {
 		background: lighten($primary, 6%);
 		color: $white;
 	}
 
-	&:active { color: $white; }
-
 	&--secondary  {
 		background: $secondary;
 
-		&:hover { background: lighten($secondary, 6%); }
+		&:hover {
+			background: lighten($secondary, 6%);
+		}
 	}
 
 	&--inactive {
 		background: $stealth-grey;
 
-		&:hover { background: $stealth-grey; }
+		&:hover {
+			background: $stealth-grey;
+		}
 	}
 
-	&--big { font-size: $font-size * 1.2; }
-
-	&--tiny { font-size: $font-size * .8; }
-
-	&--wide { width: 100%; }
-
-	&--icon { padding: .5em; }
-
-	&--round { border-radius: 50%; }
-
-	&--square { border-radius: 0; }
+	&--icon {
+		padding: .5em;
+	}
 }

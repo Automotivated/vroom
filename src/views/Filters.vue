@@ -21,7 +21,7 @@ import Energylabel from './elements/filters/Energylabel.vue'
 import Color from './elements/filters/Color.vue'
 
 export default {
-	name: 'Sidebar',
+	name: 'Filters',
 	components: {
 		Multiple,
 		MultipleSearch,

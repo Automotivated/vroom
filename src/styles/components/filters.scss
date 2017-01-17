@@ -18,6 +18,7 @@
 
 		&:first-of-type {
 			border-top: none;
+			padding-top: 0;
 		}
 		&:last-of-type {
 			border-bottom: 1px solid $element-grey;

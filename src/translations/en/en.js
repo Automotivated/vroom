@@ -10,7 +10,7 @@ export const translationsEn = {
 			locale: 'en-US',
 			currency: 'USD',
 			clear_filters: 'Clear filters',
-			no_filters: 'Improve results by adding filters',
+			back_to_results: 'Back to overview',
 			more: 'More',
 			less: 'Less'
 		},
