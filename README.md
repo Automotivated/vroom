@@ -173,8 +173,13 @@ Because we rebooted the project, this list will grow and grow before release. Th
   - [ ] Size (results per page)
   - [ ] Pagination/offset
   - [ ] Ordering (asc/desc)
+
 -[ ] Components
-	- [ ] Active filters
+	- [ ] Mobile
+		- [ ] Mobile menu
+		- [ ] Sidebar toggle
+		- [ ] Improved media queries
+	- [x] Active filters
 	- [ ] Filters
 	  - [x] Search filter
 	  - [x] Multi filter
