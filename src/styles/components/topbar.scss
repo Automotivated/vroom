@@ -9,6 +9,7 @@
 	height: 2.5em;
 	display: flex;
 	margin: 0 0 20px 0;
+	z-index: 100;
 
 	button {
 		@extend .vrm-button;
@@ -16,13 +17,14 @@
 		min-width: 10%;
 		border-radius: 0px;
 		text-align: left;
-		font-weight: normal;
+		font-weight: 300;
 		height: 100%;
 		margin: 0;
-		text-align: left;
+		text-align: center;
 		background: #f3f3f3;
 		color: $primary;
 		border-right: 1px solid #bec3c8;
+		padding: 0.15em 0 0 0;
 
 		&:hover {
 			color: $primary;
@@ -35,11 +37,10 @@
 
 		&.vrm-topbar {
 			&__button {
-				&--active {
-					text-align: center;
-				}
-
 				&--filters {
+					text-align: left;
+					padding: 0.1em 0 0 1.5em;
+
 					> i {
 						position: absolute;
 						width: 1em;
@@ -83,6 +84,39 @@
 							fill: $white;
 						}
 					}
+				}
+			}
+		}
+	}
+
+	&--sticky {
+		position: fixed;
+		top: 0;
+		z-index: 100;
+
+		button {
+			background: $primary;
+			color: $white;
+			border-right: 1px solid #2d936b;
+			&:hover {
+				color: $white;
+				background: $primary;
+			}
+
+			&.vrm-topbar {
+				&__button {
+					&--filters,
+					&--search,
+					&--controls {
+						>	i {
+							> svg {
+								fill: $white;
+							}
+						}
+					}
+				}
+				&__active {
+					background: #2d936b;
 				}
 			}
 		}

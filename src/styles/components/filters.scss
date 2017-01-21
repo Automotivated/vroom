@@ -3,12 +3,14 @@
  */
 
 @import 'settings/globals';
+@import 'components/button';
 
 .vrm-filters {
 	display: flex;
 	flex-flow: wrap row;
 	margin: 0;
 	padding: 0;
+	z-index: 200;
 
 	.vrm-filter {
 		max-width: 100%;
@@ -23,49 +25,104 @@
 			border-bottom: 1px solid $element-grey;
 		}
 
-		> :first-child {
-			h5 {
-				position: relative;
-				margin: 0;
-				cursor: pointer;
+		h5 {
+			position: relative;
+			margin: 0;
+			cursor: pointer;
 
-				> i {
-					position: absolute;
-					width: 1em;
-					height: 1em;
-					top: calc(50% - 0.5em);
-					right: -0.25em;
-					transition: transform 0.2s;
+			> i {
+				position: absolute;
+				width: 1em;
+				height: 1em;
+				top: calc(50% - 0.5em);
+				right: -0.25em;
+				transition: transform 0.2s;
 
-					&.vrm-chevron {
-						&__bottom {
-							> svg {
-								transform: rotate(90deg);
-							}
-						}
-						&__left {
-							> svg {
-								transform: rotate(180deg);
-							}
-						}
-						&__top {
-							> svg {
-								transform: rotate(-90deg);
-							}
+				&.vrm-chevron {
+					&__bottom {
+						> svg {
+							transform: rotate(90deg);
 						}
 					}
-					&.vrm-chevron-toggle {
-						transform: rotate(180deg);
+					&__left {
+						> svg {
+							transform: rotate(180deg);
+						}
 					}
-
-					> svg {
-						width: 100%;
-						height: 100%;
-						position: absolute;
-						transform-origin: 50% 50%;
-						fill: $textual-grey;
+					&__top {
+						> svg {
+							transform: rotate(-90deg);
+						}
 					}
 				}
+				&.vrm-chevron-toggle {
+					transform: rotate(180deg);
+				}
+
+				> svg {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					transform-origin: 50% 50%;
+					fill: $textual-grey;
+				}
+			}
+		}
+	}
+
+	button {
+		@extend .vrm-button;
+		width: 100%;
+		border-radius: 0;
+		font-weight: 300;
+		margin: 0;
+		text-align: left;
+		padding: 0.1em 0 0 1.5em;
+		height: 2.5em;
+
+		> i {
+			position: absolute;
+			width: 1em;
+			height: 1em;
+			top: calc(50% - 0.5em);
+			left: 0.5em;
+			transition: transform 0.2s;
+
+			> svg {
+				transform: rotate(180deg);
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				transform-origin: 50% 50%;
+				fill: $white;
+			}
+		}
+	}
+
+	@media screen and (max-width: 720px) {
+		position: fixed;
+		background: #fff;
+		overflow: hidden;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		&__content {
+			top: 0;
+			bottom: 0;
+			overflow: scroll;
+			padding: 0 20px;
+
+			> div:first-of-type {
+				margin: 2em 0 0 0;
+			}
+
+			button {
+				position: fixed;
+				left: 0;
+				right: 0;
+				z-index: 200;
 			}
 		}
 	}

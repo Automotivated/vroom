@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="vrm-results">
 		Results template
 	</div>
 </template>

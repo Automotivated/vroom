@@ -48,14 +48,44 @@ export default {
 			activeFilters: 'filters/filteredActiveFilters'
 		})
 	},
+	mounted () {
+		if (this.isMobile) {
+			const doc = document.documentElement
+			const topbar = document.getElementsByClassName('vrm-topbar')
+			let node = topbar[0]
+			let curtop = node.offsetTop
+			let curtopscroll = 0
+			while (node.offsetParent) {
+				node = node.offsetParent
+				curtop += node.offsetTop
+				curtopscroll += node.offsetParent ? node.offsetParent.scrollTop : 0
+			}
+			const offset = curtop - curtopscroll
+
+			// @todo: fix hammering this event
+			// @todo: sticky configurable?
+			window.addEventListener('scroll', (evt) => {
+				var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0)
+				if (top > offset) {
+					topbar[0].classList.add('vrm-topbar--sticky')
+				} else {
+					topbar[0].classList.remove('vrm-topbar--sticky')
+				}
+			}, false)
+		}
+	},
 	methods: {
 		toggle (element) {
 			if (this.active !== element) {
 				this.$store.dispatch('app/toggleTopbar', this.active)
+			}
+
+			if (this.active !== element && element !== 'filters') {
 				this.active = element
 			} else {
 				this.active = null
 			}
+
 			this.$store.dispatch('app/toggleTopbar', element)
 		}
 	}

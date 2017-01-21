@@ -18,7 +18,8 @@ export default {
 		},
 		options: {
 			debounce: 350,
-			availableFilters: ['make', 'model', 'fuel', 'price', 'year', 'mileage', 'body', 'transmission', 'vehicle-type', 'type', 'color', 'doors', 'engine-capacity', 'power', 'additional-tax', 'energylabel', 'options']
+			availableFilters: ['transmission', 'fuel', 'price', 'year', 'mileage', 'body', 'vehicle-type', 'type', 'color', 'doors', 'engine-capacity', 'power', 'additional-tax', 'energylabel', 'options']
+			// availableFilters: ['make', 'model', 'fuel', 'price', 'year', 'mileage', 'body', 'transmission', 'vehicle-type', 'type', 'color', 'doors', 'engine-capacity', 'power', 'additional-tax', 'energylabel', 'options']
 		},
 		loader: {
 			loading: false,

@@ -104,9 +104,9 @@ describe('App store', () => {
 		// 	})
 		// })
 		it('should update loading', () => {
-			expect(vm.$store.getters['app/loading']).to.equal(true)
-			vm.$store.dispatch('app/toggleLoading')
 			expect(vm.$store.getters['app/loading']).to.equal(false)
+			vm.$store.dispatch('app/toggleLoading')
+			expect(vm.$store.getters['app/loading']).to.equal(true)
 		})
 	})
 })

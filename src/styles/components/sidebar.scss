@@ -10,20 +10,10 @@
 	padding: 0 10px;
 
 	@media screen and (max-width: 800px) {
-		// pointer-events: none;
-		// overflow: hidden;
-		// z-index: 998;
-		// position: fixed;
-		// top: 0;
-		// right: 0;
-		// bottom: 0;
-		// left: 0;
 		display: flex;
 		flex-flow: nowrap column;
 		flex: 1 1 100%;
 		background: $white;
-		// backdrop-filter: blur(0);
-		// transition: background 300ms $easing, backdrop-filter 300ms $easing;
 	}
 
 	@media screen and (max-width: 720px) {

@@ -11,6 +11,7 @@ export const translationsNl = {
 			currency: 'EUR',
 			clear_filters: 'Wis filters',
 			filters: 'Filters',
+			back_to_overview: 'Terug naar overzicht',
 			more: 'Meer',
 			less: 'Minder'
 		},

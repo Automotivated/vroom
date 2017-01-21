@@ -1,7 +1,13 @@
 <template>
 	<div class="vrm-filters">
-		<div class="vrm-filter" v-for="(filter, key) in filteredFilters">
-			<component :is="filter.type" :filter="filter" :key="key"></component>
+		<div class="vrm-filters__content">
+			<button v-if="showFilters && isMobile" @click.prevent="hideFilters()">
+				<i v-svg:chevron></i>
+				{{ $t('filters.global.back_to_overview') }}
+			</button>
+			<div class="vrm-filter" v-for="(filter, key) in filteredFilters">
+				<component :is="filter.type" :filter="filter" :key="key"></component>
+			</div>
 		</div>
 	</div>
 </template>
@@ -30,8 +36,15 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			filteredFilters: 'filters/filteredFilters'
+			filteredFilters: 'filters/filteredFilters',
+			showFilters: 'app/showFilters',
+			isMobile: 'app/isMobile'
 		})
+	},
+	methods: {
+		hideFilters () {
+			this.$store.dispatch('app/toggleTopbar', 'filters')
+		}
 	}
 }
 </script>

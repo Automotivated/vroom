@@ -63,7 +63,8 @@ export default {
 		} else {
 			this.$store.dispatch('results/getData')
 		}
-
+		// @todo: look into attachEvent for crossbrowser support
+		//
 		// Check if we can manipulate the window address bar state
 		if (window.history.pushState) {
 			// Add the initial window state

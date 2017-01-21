@@ -11,6 +11,7 @@ export const translationsEn = {
 			currency: 'USD',
 			clear_filters: 'Clear filters',
 			filters: 'Filters',
+			back_to_overview: 'Back to results',
 			more: 'More',
 			less: 'Less'
 		},
