@@ -42,3 +42,9 @@ export const addDelay = ({ commit, state }, delay) => {
 export const toggleLoading = ({ commit, state }) => {
 	commit(types.TOGGLE_LOADING)
 }
+/**
+ * setLoading
+ */
+export const toggleTopbar = ({ commit, state }, element) => {
+	commit(types.TOGGLE_TOPBAR, element)
+}

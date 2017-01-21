@@ -68,6 +68,8 @@ function isTouch () {
 }
 
 export {
+	getViewport,
+	isTouch,
 	isMobile,
 	inArray,
 	findActiveFilterIndex

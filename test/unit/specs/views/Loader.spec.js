@@ -1,10 +1,11 @@
 // Import Vue and the component being tested
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Loader from 'src/views/Loader'
-import AppStore from 'src/store/modules/app/app'
 
 Vue.use(Vuex)
+
+import Loader from 'src/views/Loader'
+import AppStore from 'src/store/modules/app/app'
 
 describe('Loader', () => {
 	let vm = null

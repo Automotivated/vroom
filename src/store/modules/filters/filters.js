@@ -86,6 +86,9 @@ const filters = {
 		}
 	},
 	getters: {
+		getSearch: (state) => {
+			return state.filters['keyword']
+		},
 		filteredActiveFilters: (state) => {
 			var stack = state.activeFilters
 			return stack

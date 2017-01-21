@@ -1,6 +1,7 @@
 <template>
 	<div class="amv-vrm">
 		<loader></loader>
+		<topbar v-if="isMobile"></topbar>
 		<sidebar></sidebar>
 		<workspace></workspace>
 		<credits></credits>
@@ -23,6 +24,7 @@ import './directives/svg'
 
 // import templates
 import Loader from './views/Loader'
+import Topbar from './views/Topbar'
 import Sidebar from './views/Sidebar'
 import Workspace from './views/Workspace'
 import Credits from './views/Credits'
@@ -31,6 +33,7 @@ export default {
 	name: 'App',
 	components: {
 		Loader,
+		Topbar,
 		Sidebar,
 		Workspace,
 		Credits
@@ -43,6 +46,7 @@ export default {
 	},
 	computed: {
 		...mapGetters({
+			isMobile: 'app/isMobile',
 			options: 'app/options',
 			activeFilters: 'filters/filteredActiveFilters'
 		})

@@ -4,34 +4,37 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 import Active from 'src/views/Active'
+import FiltersStore from 'src/store/modules/filters/filters'
 import { body } from 'src/store/modules/filters/masterdata/body.js'
 
 describe('Active.vue', () => {
-	it('should render correct contents', () => {
-		const vm = new Vue({
+	let vm = null
+
+	beforeEach(() => {
+		vm = new Vue({
 			el: document.createElement('div'),
-			render: (h) => h(Active),
 			store: new Vuex.Store({
 				modules: {
 					filters: {
 						namespaced: true,
 						state: {
+							activeFilters: [{
+								key: 'body',
+								value: 'hatchback'
+							}],
 							filters: {
 								[body.key]: body
 							}
 						},
-						getters: {
-							filteredActiveFilters: () => {
-								return [{
-									key: 'body',
-									value: 'hatchback'
-								}]
-							}
-						}
+						getters: FiltersStore.getters
 					}
 				}
-			})
+			}),
+			render: (h) => h(Active)
 		})
+	})
+
+	it('should render correct contents', () => {
 		expect(vm.$el.querySelector('.vrm-active-filters').childNodes.length).to.equal(1)
 	})
 })

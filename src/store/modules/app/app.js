@@ -6,6 +6,7 @@
 import Vue from 'vue'
 import * as types from '../../types'
 import * as actions from './actions'
+import { getViewport, isMobile } from '../../../filters/util'
 
 export default {
 	namespaced: true,
@@ -17,11 +18,19 @@ export default {
 		},
 		options: {
 			debounce: 350,
-			availableFilters: ['keyword', 'make', 'model', 'fuel', 'price', 'year', 'mileage', 'body', 'transmission', 'vehicle-type', 'type', 'color', 'doors', 'engine-capacity', 'power', 'additional-tax', 'energylabel', 'options']
+			availableFilters: ['make', 'model', 'fuel', 'price', 'year', 'mileage', 'body', 'transmission', 'vehicle-type', 'type', 'color', 'doors', 'engine-capacity', 'power', 'additional-tax', 'energylabel', 'options']
 		},
 		loader: {
 			loading: false,
 			delays: [800]
+		},
+		isMobile: isMobile(),
+		viewport: getViewport(),
+		topbar: {
+			search: false,
+			filters: false,
+			active: false,
+			controls: false
 		},
 		updateHistory: false
 	},
@@ -36,6 +45,10 @@ export default {
 				? newState
 				: !state.loader.loading
 			)
+		},
+		// Update topbar elements
+		[types.TOGGLE_TOPBAR] (state, element) {
+			Vue.set(state.topbar, element, !state.topbar[element])
 		},
 		// Adds a delay to the stack with a maximum of 10
 		[types.ADD_DELAY] (state, delay) {
@@ -57,6 +70,11 @@ export default {
 		loading: state => state.loader.loading,
 		options: state => state.options,
 		api: state => state.api,
+		isMobile: state => state.isMobile,
+		showSearch: state => (state.isMobile && state.topbar.search) || !state.isMobile,
+		showActive: state => (state.isMobile && state.topbar.active) || !state.isMobile,
+		showFilters: state => (state.isMobile && state.topbar.filters) || !state.isMobile,
+		showControls: state => (state.isMobile && state.topbar.controls) || !state.isMobile,
 		loadingDelay (state) {
 			const delays = state.loader.delays
 			var sum = delays.reduce(function (a, b) {

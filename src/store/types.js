@@ -5,6 +5,7 @@
 
 export const TOGGLE_HISTORY = 'TOGGLE_HISTORY'
 export const TOGGLE_LOADING = 'TOGGLE_LOADING'
+export const TOGGLE_TOPBAR = 'TOGGLE_TOPBAR'
 export const ADD_DELAY = 'ADD_DELAY'
 export const UPDATE_OPTIONS = 'UPDATE_OPTIONS'
 export const UPDATE_API = 'UPDATE_API'

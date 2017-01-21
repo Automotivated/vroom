@@ -11,12 +11,14 @@ import glass from '../assets/svg/glass.svg'
 import checked from '../assets/svg/checked.svg'
 import chevron from '../assets/svg/chevron.svg'
 import close from '../assets/svg/close.svg'
+import sort from '../assets/svg/sort.svg'
 
 const sprite = {
 	'checked': checked,
 	'glass': glass,
 	'chevron': chevron,
-	'close': close
+	'close': close,
+	'sort': sort
 }
 
 // Register a global custom directive called v-svg

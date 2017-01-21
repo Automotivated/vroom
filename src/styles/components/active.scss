@@ -65,7 +65,7 @@
 
 @media screen and (max-width: 720px) {
 	.vrm-active {
-		margin: 20px 0 0 0;
+		// margin: 20px 0 0 0;
 		flex-flow: column wrap;
 
 		.vrm-clear-active {
@@ -73,6 +73,7 @@
 			text-align: left;
 			white-space: nowrap;
 			line-height: 2em;
+			order: -1;
 		}
 	}
 }
