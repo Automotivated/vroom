@@ -173,7 +173,6 @@ Because we rebooted the project, this list will grow and grow before release. Th
   - [ ] Size (results per page)
   - [ ] Pagination/offset
   - [ ] Ordering (asc/desc)
-
 -[ ] Components
 	- [ ] Mobile
 		- [ ] Mobile menu
