@@ -1,5 +1,5 @@
 <template>
-	<aside v-cloak class="vrm-sidebar">
+	<aside v-cloak class="vrm-sidebar" :class="{'vrm-sidebar--active': (!isMobile || showSearch || showFilters)}">
 		<stats v-if="!isMobile"></stats>
 		<search v-if="showSearch"></search>
 		<filters v-if="showFilters"></filters>

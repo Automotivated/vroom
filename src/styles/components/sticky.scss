@@ -37,9 +37,11 @@
 				border-bottom: 1px solid $element-grey;
 			}
 		}
-		& ~ .vrm-loader {
-			top: 2.5em;
-			background-color: $slate-grey;
-		}
+	}
+
+	.vrm-topbar--sticky ~ .vrm-loader,
+	.vrm-sidebar--active ~ .vrm-loader {
+		top: 2.5em;
+		background-color: $slate-grey;
 	}
 }
