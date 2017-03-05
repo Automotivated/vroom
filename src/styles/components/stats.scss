@@ -14,7 +14,12 @@
 			color: $primary;
 		}
 	}
-	@media screen and (max-width: 800px) {
+}
+
+@media screen and (max-width: 800px) {
+	.vrm-stats {
+		padding: 1em 0;
+
 		h4 {
 			text-align: center;
 		}
