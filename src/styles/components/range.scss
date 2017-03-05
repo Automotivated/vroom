@@ -9,28 +9,11 @@
 		div {
 			position: relative;
 
-			.vrm-slider {
-				margin: 0 0 8px;
-
-				.vue-slider {
-					background-color: $element-grey;
-
-					.vue-slider-dot {
-						border: 2px solid $white;
-						box-shadow: none;
-						background-color: $primary;
-					}
-
-					.vue-slider-process {
-						background-color: $primary;
-					}
-				}
-			}
-
 			div.vrm-range {
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				margin: 0.2em 0 0;
 
 				span.vrm-range-input {
 					position: relative;
@@ -48,13 +31,30 @@
 						left: 0.5em;
 						font-size: 0.8em;
 						height: 3.2rem;
-						top: calc(50% - 0.65em);
+						top: calc(50% - 0.7em);
 						color: $textual-grey;
 					}
 				}
 
 				span.vrm-range-seperator {
 					padding: 0 6px;
+				}
+			}
+			.vrm-slider {
+				margin: 0.5em 0 0;
+
+				.vue-slider {
+					background-color: $element-grey;
+
+					.vue-slider-dot {
+						border: 2px solid $white;
+						box-shadow: none;
+						background-color: $primary;
+					}
+
+					.vue-slider-process {
+						background-color: $primary;
+					}
 				}
 			}
 		}

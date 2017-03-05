@@ -5,7 +5,6 @@
 			<i v-svg:chevron class="vrm-chevron__top" :class="{'vrm-chevron-toggle': !expanded}"></i>
 		</h5>
 		<div v-if="expanded">
-			<vue-slider ref="slider" v-bind="slider" @drag-start="dragStart" @drag-end="dragEnd" @callback="updateFilter"></vue-slider>
 			<div class="vrm-range">
 				<span class="vrm-range-input">
 					<label :for="getUniqueId('from')" v-html="toLocale(filter.locale)"></label>
@@ -31,6 +30,7 @@
 						@keyup.enter="blur">
 				</span>
 			</div>
+			<vue-slider ref="slider" v-bind="slider" @drag-start="dragStart" @drag-end="dragEnd" @callback="updateFilter"></vue-slider>
 		</div>
 	</div>
 </template>
