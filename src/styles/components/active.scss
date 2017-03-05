@@ -8,7 +8,7 @@
 	min-height: 2.5em;
 	display: flex;
 	width: 100%;
-	padding: 0;
+	padding: 0 1em 0 0;
 	font-size: 1.4rem;
 	flex-wrap: no-wrap;
 
@@ -65,8 +65,9 @@
 
 @media screen and (max-width: 720px) {
 	.vrm-active {
-		// margin: 20px 0 0 0;
+		padding: 1em;
 		flex-flow: column wrap;
+		border-bottom: 1px solid $element-grey;
 
 		.vrm-clear-active {
 			display: block;

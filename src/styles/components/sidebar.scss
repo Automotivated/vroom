@@ -7,13 +7,14 @@
 .vrm-sidebar {
 	max-width: 260px;
 	flex: 1 0 260px;
-	padding: 0 10px;
+	padding: 0 1em;
 
 	@media screen and (max-width: 800px) {
 		display: flex;
 		flex-flow: nowrap column;
 		flex: 1 1 100%;
 		background: $white;
+		padding: 0;
 	}
 
 	@media screen and (max-width: 720px) {

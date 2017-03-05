@@ -34,4 +34,9 @@
 			}
 		}
 	}
+
+	@media screen and (max-width: 800px) {
+		border-bottom: 1px solid $element-grey;
+		padding: 1em;
+	}
 }
