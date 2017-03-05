@@ -1,10 +1,10 @@
 <template>
 	<div class="amv-vrm">
-		<loader></loader>
 		<topbar v-if="isMobile"></topbar>
 		<sidebar></sidebar>
 		<workspace></workspace>
 		<credits></credits>
+		<loader></loader>
 	</div>
 </template>
 

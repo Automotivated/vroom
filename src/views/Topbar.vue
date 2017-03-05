@@ -31,6 +31,7 @@
 <script>
 // import styles
 import 'components/topbar'
+import 'components/sticky'
 
 // import components
 import { mapGetters } from 'vuex'

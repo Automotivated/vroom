@@ -1,0 +1,45 @@
+@import 'settings/globals';
+
+// sticky exceptions
+@media screen and (max-width: 800px) {
+	.vrm-topbar--sticky {
+		& ~ .vrm-sidebar {
+			.vrm-search {
+				position: fixed;
+				top: 2.5em;
+				left: 0;
+				padding: 1em;
+				width: 100%;
+				background: #ffffff;
+				border-bottom: 1px solid $element-grey;
+			}
+		}
+
+		& ~ .vrm-workspace {
+			margin-top: 3.5em;
+
+			.vrm-active {
+				position: fixed;
+				top: 2.5em;
+				left: 0;
+				padding: 1em 0 1em 1em;
+				background: #ffffff;
+				border-bottom: 1px solid $element-grey;
+			}
+
+			.vrm-controls {
+				position: fixed;
+				top: 2.5em;
+				left: 0;
+				padding: 1em;
+				width: 100%;
+				background: #ffffff;
+				border-bottom: 1px solid $element-grey;
+			}
+		}
+		& ~ .vrm-loader {
+			top: 2.5em;
+			// background-color: #ffffff;
+		}
+	}
+}
