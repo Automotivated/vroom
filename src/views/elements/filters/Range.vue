@@ -5,7 +5,7 @@
 			<i v-svg:chevron class="vrm-chevron__top" :class="{'vrm-chevron-toggle': !expanded}"></i>
 		</h5>
 		<div v-if="expanded">
-			<vue-slider ref="slider" v-bind="slider" @callback="updateFilter"></vue-slider>
+			<vue-slider ref="slider" v-bind="slider" @drag-start="dragStart" @drag-end="dragEnd" @callback="updateFilter"></vue-slider>
 			<div class="vrm-range">
 				<span class="vrm-range-input">
 					<label :for="getUniqueId('from')" v-html="toLocale(filter.locale)"></label>
@@ -49,6 +49,12 @@ export default {
 	name: 'Range',
 	props: ['filter'],
 	mixins: [filter],
+	data () {
+		return {
+			pollingFrequency: 100,
+			polling: null
+		}
+	},
 	components: {
 		vueSlider
 	},
@@ -167,6 +173,29 @@ export default {
 				range: 'to',
 				value: this.filter.options[currentValue[1]]
 			}])
+		},
+		dragStart (ref) {
+			this.polling = window.setTimeout(() => {
+				this.pollingUpdate()
+			}, this.pollingFrequency)
+		},
+		dragEnd (ref) {
+			window.clearTimeout(this.polling)
+		},
+		pollingUpdate () {
+			var currentValue = this.$refs.slider.getValue()
+			var fromValue = (this.filter.locale)
+				? normalizeNumber(this.filter.options[currentValue[0]])
+				: this.filter.options[currentValue[0]]
+			var toValue = (this.filter.locale)
+				? normalizeNumber(this.filter.options[currentValue[1]])
+				: this.filter.options[currentValue[1]]
+			document.getElementById(this.getUniqueId('from')).value = fromValue
+			document.getElementById(this.getUniqueId('to')).value = toValue
+
+			this.polling = window.setTimeout(() => {
+				this.pollingUpdate()
+			}, this.pollingFrequency)
 		},
 		parseNumber (n) {
 			return n.replace(/[^0-9]+/g, '')
