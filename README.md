@@ -163,20 +163,20 @@ Because we rebooted the project, this list will grow and grow before release. Th
   - [x] global app states
 - [ ] Create a store module for the filters
   - [x] Masterdata
-  - [ ] Active filters
-  - [ ] Reset filters
+  - [x] Active filters
+  - [x] Reset filters
   - [ ] Parsing
 - [ ] Create a store module for the results
   - [ ] Dummy content
 - [ ] Create a store module for the stats
   - [ ] Display (grid/rows)
   - [ ] Size (results per page)
-  - [ ] Pagination/offset
   - [ ] Ordering (asc/desc)
+  - [ ] Pagination/offset
 -[ ] Components
 	- [ ] Mobile
-		- [ ] Mobile menu
-		- [ ] Sidebar toggle
+		- [x] Mobile menu
+		- [x] Sidebar toggle
 		- [ ] Improved media queries
 	- [x] Active filters
 	- [ ] Filters
