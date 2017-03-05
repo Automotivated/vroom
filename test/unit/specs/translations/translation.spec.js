@@ -29,7 +29,7 @@ describe('i18n should translate', () => {
 		Vue.i18n.add('en', translations['en'])
 		vm = new Vue({
 			store,
-			template: '<div id="main"><p>{{ $t("filters.masterdata.body.label") }}</div>'
+			template: '<div id="main"><p>{{ $t("filters.masterdata.body.label") }}</p></div>'
 		}).$mount()
 	})
 
