@@ -7,13 +7,15 @@
 .vrm-filter {
 	&__range {
 		div {
+			display: flex;
+			flex-direction: column;
 			position: relative;
 
 			div.vrm-range {
 				display: flex;
+				flex-direction: row;
 				align-items: center;
 				justify-content: center;
-				margin: 0.2em 0 0;
 
 				span.vrm-range-input {
 					position: relative;
@@ -40,8 +42,9 @@
 					padding: 0 6px;
 				}
 			}
+
 			.vrm-slider {
-				margin: 0.5em 0 0;
+				margin: 0 0 0.2em;
 
 				.vue-slider {
 					background-color: $element-grey;
@@ -56,6 +59,20 @@
 						background-color: $primary;
 					}
 				}
+			}
+		}
+	}
+	// sticky exceptions
+	@media screen and (max-width: 800px) {
+		div {
+			flex-direction: column-reverse;
+
+			div.vrm-range {
+				margin: 0.2em 0 0;
+			}
+
+			.vrm-slider {
+				margin: 1em 0 0;
 			}
 		}
 	}
