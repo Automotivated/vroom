@@ -152,7 +152,7 @@ Because we rebooted the project, this list will grow and grow before release. Th
 - [ ] Start working on documentation
 - [ ] Setup gitbook
 - [ ] Autodeploy gitbook to surge?
-- [ ] Get a design from Dezzign
+- [x] Get a design from Dezzign
 - [ ] Get test coverage as high as necessary
 - [x] Internationalization
 - [x] History state
